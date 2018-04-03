@@ -4,7 +4,7 @@
 
 ## Minimum Viable Product
 
-Airbrrrb is a web application inspired by the world famous Airbnb site. The backend is built with a Rails 5 API and handles data persistence with a Postgresql database schema. The frontend is built with React & Redux and utilizes React Router and Redux Thunk middleware for state management. the app is also styled with Bootstrap CSS.
+Airbrrrb is a web application inspired by the world famous Airbnb site. The backend is built with a Rails 5 API and handles data persistence with a Postgresql database schema. The frontend is built with React & Redux and utilizes React Router and Redux Thunk middleware for state management. The app is also styled with Bootstrap CSS.
 
 ### Features
 
@@ -25,39 +25,39 @@ Airbrrrb is a web application inspired by the world famous Airbnb site. The back
 
 #### Step 1: Rails API backend setup, DB setup & migrations
 
-**Objective** 
+**Objectives** 
   - Complete Rails backend and setup database schema.
 
 #### Step 2: Frontend User Authentication with Auth0
 
-**Objective**
+**Objectives**
   - Fully functioning User Signup & Login.
 
 #### Step 3: Listings model (CRUD actions) & components
   
-**Objective**
+**Objectives**
   - CRUD actions for listings in API.
 
 #### Step 4: Listings Search (with Google Maps API)
 
-**Objective**
+**Objectives**
   - Implement listings search with Google Maps API.
   - SearchListingsContainer displays maps properly.
 
 #### Step 5: Bookings
 
-**Objective**
+**Objectives**
   - Allow users to Book a Listing.
   - Set up endpoints and frontend components.
 
 #### Step 6: Reviews
 
-**Objective**
+**Objectives**
   - Allow Users to leave a Review on ListingDetailPage.
   - Set up endpoints and frontend components.
 
 #### Step 7: Styling and Debugging
 
-**Objective**
+**Objectives**
   - Implement Bootstrap styling & debug any critical issues.
 
