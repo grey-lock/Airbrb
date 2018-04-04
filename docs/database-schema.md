@@ -19,10 +19,10 @@ column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
 host_id         | integer   | not null, foreign key (references users), indexed
-booking_id      | integer   | not null, foreign key (references bookings), indexed
+booking_id      | integer   | foreign key (references bookings), indexed
 title           | string    | not null
 description     | text      | not null
-address         | string    | not null
+address         | text      | not null
 long:           | float     | not null
 lat:            | float     | not null
 rules           | text      | not null
