@@ -30,6 +30,7 @@ gem 'dotenv-rails'
 # For user authentication
 # gem 'knock'
 gem 'devise_token_auth'
+gem 'omniauth'
 
 gem 'active_model_serializers'
 gem 'faker'
