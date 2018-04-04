@@ -27,7 +27,7 @@ gem 'rack-cors'
 
 gem 'dotenv-rails'
 # For user authentication
-gem 'knock' 
+gem 'jwt' 
 gem 'active_model_serializers'
 gem 'faker'
 
