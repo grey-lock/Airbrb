@@ -25,13 +25,13 @@ description     | text      | not null
 address         | text      | not null
 long:           | float     | not null
 lat:            | float     | not null
-rules           | text      | not null
 price           | integer   | not null
 prop_type       | string    | not null
 room_type       | string    | not null
 num_guests      | integer   | not null
 bedrooms        | integer   | not null
 beds            | integer   | not null
+rules           | text      | not null
 img_url         | string    | not null
 amenities       | boolean   | not null, default false (WiFi, Kitchen, TV, Cable, etc.)
 
@@ -42,7 +42,7 @@ column name     | data type | details
 id              | integer   | not null, primary key
 user_id         | integer   | not null, foreign key (references users), indexed
 listing_id      | string    | not null, foreign key (references listings), indexed
-status          | string    | not null, default pending
+status          | string    | not null, default: pending
 check_in        | date      | not null
 check_out       | date      | not null
 
