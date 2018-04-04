@@ -31,6 +31,9 @@ gem 'dotenv-rails'
 # gem 'knock'
 gem 'devise_token_auth'
 gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+
 
 gem 'active_model_serializers'
 gem 'faker'
