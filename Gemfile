@@ -26,8 +26,11 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'rack-cors'
 
 gem 'dotenv-rails'
+
 # For user authentication
-gem 'knock' 
+# gem 'knock'
+gem 'devise_token_auth'
+
 gem 'active_model_serializers'
 gem 'faker'
 
