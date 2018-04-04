@@ -1,7 +1,17 @@
 Rails.application.routes.draw do
-  resources :reviews
-  resources :bookings
-  resources :listings
-  resources :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  
+  root 'static_home#root'
+  
+  namespace :api, defaults: { format: json } do
+    resources :users, only: [:index, :create, :show]
+    get 'users/:user_id/bookings', to: 'bookings#index'
+    
+    resources :listings, only: [:index, :create, :show]
+    get 'listings/:listing_id/bookings', to: 'bookings#index'
+    get 'listings/:listing_id/reviews', to: 'reviews#index'
+    
+    resources :bookings, only: [:index, :show, :create, :destroy]
+    resources :reviews, only: [:create, :show, :destroy]
+  end
+
 end
