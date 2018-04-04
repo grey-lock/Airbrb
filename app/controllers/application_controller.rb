@@ -2,7 +2,7 @@ class ApplicationController < ActionController::API
   include Knock::Authenticable
   helper_method :current_user, :logged_in?
   
-  
+
   private
   
   # Find the user either by the logged in user, or find by the session token

@@ -8,6 +8,9 @@
 
 user = User.new
 user.email = 'user@bananas.com'
+user.username = 'Sickbro'
 user.password = 'bananaBro'
 user.password_confirmation = 'bananaBro'
+user.firstname = 'Banana'
+user.lastname = 'Bro'
 user.save

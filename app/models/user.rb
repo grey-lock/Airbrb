@@ -5,7 +5,7 @@ class User < ApplicationRecord
   has_many :bookings
   has_many :reviews
   
-  validates :firstname, :lastname, :password_digest, :session_token, presence: true
+  validates :firstname, :lastname, :password_digest, presence: true
   validates :username, :email, uniqueness: true
 	validates :password, length: {minimum: 6}
 	
@@ -18,8 +18,8 @@ class User < ApplicationRecord
 	end
 	
 	# Generate a secure session token
-	 def self.generate_session_token
-    SecureRandom::urlsafe_base64(16);
+	def self.generate_session_token
+    SecureRandom::urlsafe_base64(16)
   end
 	
 	# Helper to generate, save and return new session token
