@@ -19,6 +19,7 @@ login () {
     })
     .then(function (result) {
         console.log(result)
+        debugger
         // jwt is undefined though...
         localStorage.setItem("jwt", result.jwt)
       })
