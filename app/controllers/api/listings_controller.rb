@@ -4,7 +4,7 @@ class Api::ListingsController < ApplicationController
     if params[:id].present?
       @listings = Listing.where(id: params[:id])
     
-    # Show random 
+    # Show random listings
     elsif search_params_empty
       @listings = Listing.all
 
@@ -16,7 +16,7 @@ class Api::ListingsController < ApplicationController
       end
     end
     
-    # Randomly order the retrived listings
+    # Randomly order the retrieved listings
     @listings = @listings.order("RANDOM()").limit(36).includes(:img_url)
     render json: @listings
   end
@@ -65,6 +65,7 @@ class Api::ListingsController < ApplicationController
       )
   end
   
+  # Search by these values
   def search_params
     params.permit(
       :title,

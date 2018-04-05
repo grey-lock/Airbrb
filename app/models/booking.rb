@@ -12,6 +12,7 @@ class Booking < ApplicationRecord
   
   validates :valid_booking_period, :validates_status
   
+  # Add an error if the booking period is invalid, if so return an error
   def valid_booking_period
     errors.add(:check_in, 'Booking must be at least 1 day in duration.') unless self.check_out - self.check_in >= 1.day
   end
@@ -24,6 +25,7 @@ class Booking < ApplicationRecord
   #   end
   # end
   
+  # Check if the listing has any bookings and if it overlaps return an error
   def listing_available
     listings_bookings = self.listings.bookings
     listings_bookings.any? do |listbook|
