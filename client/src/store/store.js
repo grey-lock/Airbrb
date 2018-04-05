@@ -9,6 +9,11 @@ import rootReducer from '../reducers/index'
 
 const middleware = [thunk]
 
-const store = createStore(rootReducer, compose(applyMiddleware(thunk), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()));
+
+// Export the store by combining the it from the rootReducer, applying the middleware to allow syncronous calls, and redux dev tools
+const store = createStore(
+                  rootReducer, 
+                  compose(applyMiddleware(thunk), 
+                  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()));
 
 export default store
