@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { Route, Link, Switch } from 'react-router-dom'
+import Home from './components/Home'
 import LoginFormContainer from './components/LoginFormContainer'
 
 class App extends Component {
@@ -8,11 +10,12 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+          <img src={logo} className="Apgstp-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
+          <Route exact path="/" component={Home} />
+
         </p>
         <p>
           <LoginFormContainer />
