@@ -4,16 +4,16 @@ class Review < ApplicationRecord
   
   validates :body, :rating, presence: true
   
-  validates :user_id, uniqueness: { scope: :room_id, message: "You may only review a room once." }
+  validates :user_id, uniqueness: { scope: :listing_id, message: "You may only review a room once." }
   validates :rating, presence: { message: "You must leave a rating."}
   validates :body, presence: { message: "You must write a comment."}
-  validate :cant_review_own_listing, :min_comment_length
+  validate :min_comment_length
   
-  def cant_review_own_listing
-    if self.user.id == self.listing.host.id
-      errors.add(:sameUser, "You cannot review your own room.")
-    end
-  end
+  # def cant_review_own_listing
+  #   if self.user.id == self.listing.user_id
+  #     errors.add(:sameUser, "You cannot review your own room.")
+  #   end
+  # end
     
   def min_comment_length
     if self.body.length < 5
