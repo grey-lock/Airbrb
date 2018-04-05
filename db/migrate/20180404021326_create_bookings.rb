@@ -5,7 +5,7 @@ class CreateBookings < ActiveRecord::Migration[5.1]
       t.integer   :listing_id, null: false
       t.datetime  :check_in, null: false
       t.datetime  :check_out, null: false
-      t.string    :status, default: 'Pending'
+      t.string    :status, default: 'Available'
       
       t.index :user_id
       t.index :listing_id
