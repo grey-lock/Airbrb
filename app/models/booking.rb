@@ -10,19 +10,19 @@ class Booking < ApplicationRecord
   validates :check_in, presence: { message: "You must have a check in date."}
   validates :check_out, presence: { message: "You must have a check out date."}
   
-  validates :valid_booking_period, :validates_status, :listing_available
+  validates :valid_booking_period, :validates_status
   
   def valid_booking_period
     errors.add(:check_in, 'Booking must be at least 1 day in duration.') unless self.check_out - self.check_in >= 1.day
   end
   
-  def validates_status
-    if self.status === 'Available'
-      self.status = "Booked"
-    else
-      errors.add(:booked, 'This listing is unavailable.')
-    end
-  end
+  # def validates_status
+  #   if self.status === 'Available'
+  #     self.status = "Booked"
+  #   else
+  #     errors.add(:booked, 'This listing is unavailable.')
+  #   end
+  # end
   
   def listing_available
     listings_bookings = self.listings.bookings
