@@ -6,7 +6,7 @@ import rootReducer from './reducers'
 import { Provider } from 'react-redux'
 import './index.css';
 import App from './App';
-import { HashRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import registerServiceWorker from './registerServiceWorker';
 
 
@@ -14,10 +14,10 @@ const store = createStore(rootReducer, compose(applyMiddleware(thunk), window.__
 
 ReactDOM.render(
                 <Provider store={store}>
-                {/*An outer Router or Hashrouter component is required to render any items within App component*/}
-                  <HashRouter>
+                {/*An outer *Router component is required to render any items within App component*/}
+                  <BrowserRouter>
                     <App />
-                  </HashRouter>
+                  </BrowserRouter>
                 </Provider>
                 ,
                 document.getElementById('root'));
