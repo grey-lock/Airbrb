@@ -1,3 +1,21 @@
 class ListingSerializer < ActiveModel::Serializer
-  attributes :id, :host_id, :booking_id, :title
+  attributes :id,
+      :host_id,
+      :title,
+      :description,
+      :address,
+      :lat,
+      :long,
+      :price,
+      :prop_type,
+      :room_type,
+      :num_guests,
+      :bedrooms,
+      :beds,
+      :rules,
+      :img_url,
+      :wifi,
+      :kitchen,
+      :ac,
+      :tv
 end

@@ -17,7 +17,7 @@ class Api::ListingsController < ApplicationController
     end
     
     # Randomly order the retrieved listings
-    @listings = @listings.order("RANDOM()").limit(36).includes(:img_url)
+    @listings = @listings.order("RANDOM()").limit(36)
     render json: @listings
   end
   
@@ -39,7 +39,7 @@ class Api::ListingsController < ApplicationController
   private
   
   def set_listing
-    @listing = Listing.find_by(params[:id])
+    @listing = Listing.find_by(id: params[:id])
   end
   
   def listing_params

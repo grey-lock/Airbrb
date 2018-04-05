@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     get 'listings/:listing_id/reviews', to: 'reviews#index'
     
     resources :bookings, only: [:index, :show, :create, :destroy]
-    resources :reviews, only: [:create, :show, :destroy]
+    resources :reviews, only: [:index, :create, :show, :destroy]
   end
 
 end

@@ -9,6 +9,7 @@ import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
                 <Provider store={store}>
+                {/* Provider is a wrapper of a React Component to connect redux to react */}
                 {/*An outer *Router component is required to render any items within App component*/}
                   <BrowserRouter>
                     <App />
