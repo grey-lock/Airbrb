@@ -28,7 +28,7 @@ login () {
     return (
       <div>
       <h1 style={{marginTop: "20vh", marginBottom: "5vh"}}>
-          Banana Management System
+          Login
         </h1>
         <form>
           <label htmlFor="email">Email: </label>
@@ -54,12 +54,6 @@ login () {
               Login
           </button>
         <br />
-        <button
-          onClick={this.getBananas}
-          style={{marginTop: "10vh"}}
-          >
-          Get Bananas
-        </button>
       </div>
       )
   }
