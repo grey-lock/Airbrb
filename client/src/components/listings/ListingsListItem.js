@@ -3,11 +3,14 @@ import { Link } from 'react-router-dom'
 
 const ListingsListItem = ({ listing }) => {
   // Styling for each img item
+  let img = listing.img_url
+  console.log(img)
   const imgStyle = {
     height: '100%',
     width: '100%',
-    backgroundImage:`url(${listing.img_url})`,
+    backgroundImage: `url('https://media1.britannica.com/eb-media/57/150657-004-DA93B8A4.jpg')`
   }
+  // console.log(imgStyle)
   
   return (
   <li>
