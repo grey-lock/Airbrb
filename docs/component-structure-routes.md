@@ -46,5 +46,5 @@
 | /signin | AuthContainer |
 | / | HomeContainer |
 | /s/:searchParams | SearchIndexContainer |
-| /listings/:roomId | ListingItemContainer |
+| /listings/:listingId | ListingItemContainer |
 | /bookings/:userId | BookingsContainer |
