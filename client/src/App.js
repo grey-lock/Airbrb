@@ -14,12 +14,10 @@ class App extends Component {
         <header className="App-header">
           <NavBar />
         </header>
-        <p className="App-intro">
+        <div className="App-intro">
           <Route exact path="/" component={Home} />
-        </p>
-        <p>
           <LoginFormContainer />
-        </p>
+        </div>
         
       </div>
     );
