@@ -1,19 +1,11 @@
 import React from 'react'
 import ListingsList from './ListingsList'
+import { fetchListings } from '../actions/listing_actions'
+import { listingsReducer } from '../reducers/listings_reducer'
+import { connect } from 'react-redux'
 
-
-const API_URL = process.env.REACT_APP_API_URL
-
-class ListingsContainer extends React.Component {
-  componentDidMount() {
-    
-  }
-  render() {
-    return (
-      <div>
-      </div>
-      )
-  }
+const mapStateToProps = (state) => {
+  return ({
+    listings: 
+  })
 }
-
-export default ListingsContainer

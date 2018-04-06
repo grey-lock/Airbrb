@@ -2,6 +2,10 @@ import React from 'react'
 import ListingsListItem from './ListingsListItem'
 
 class ListingsList extends React.Component {
+  componentDidMount() {
+    this.props.fetchListings()
+  }
+  
   render() {
     
     const { listings } = this.props

@@ -1,4 +1,4 @@
-const listingsReducer = (state = {}, action) => {
+const listingsReducer = (state = [], action) => {
   console.log('In reducer')
   switch(action.type) {
     case 'GET_LISTING':
