@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom'
 const ListingsListItem = ({ listing }) => {
   // Styling for each img item
   const imgStyle = {
-    backgroundImage:`url(${listing.img_url})`,
     height: '100%',
     width: '100%',
+    backgroundImage:`url(${listing.img_url})`,
   }
   
   return (

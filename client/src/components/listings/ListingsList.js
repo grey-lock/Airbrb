@@ -9,9 +9,10 @@ class ListingsList extends React.Component {
   render() {
     
     const { listings } = this.props
-    const listingItems = listings.map(listing => <ListingListItem key={listing.id} listing={listing} />)
+    const listingItems = listings.map(listing => <ListingsListItem key={listing.id} listing={listing} />)
     
     // If no listings return no results otherwise return each component
+    console.log('In the component')
     return (
       listings.length === 0 ? 
       <div>No results.</div> 
