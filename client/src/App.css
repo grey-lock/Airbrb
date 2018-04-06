@@ -46,3 +46,9 @@
   top: 0;
   width: 100%;
 }
+
+#abnb-logo {
+  height: 34px;
+  width: 34px;
+  padding: 4px 23px;
+}
