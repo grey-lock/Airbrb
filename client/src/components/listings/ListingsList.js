@@ -3,9 +3,22 @@ import ListingsListItem from './ListingsListItem'
 
 class ListingsList extends React.Component {
   render() {
+    
+    const { listings } = this.props
+    const listingItems = listings.map(listing => <ListingListItem key={listing.id} listing={listing} />)
+    
+    // If no listings return no results otherwise return each component
     return (
-      <div>
+      listings.length === 0 ? 
+      <div>No results.</div> 
+      :
+      <div className='listing-list'>
+        <ul>
+          { listingItems }
+        </ul>
       </div>
       )
   }
 }
+
+export default ListingsList
