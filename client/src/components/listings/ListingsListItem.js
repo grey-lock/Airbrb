@@ -1,21 +1,22 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+
 const ListingsListItem = ({ listing }) => {
   // Styling for each img item
   let img = listing.img_url
-  console.log(img)
+  // console.log(img)
   const imgStyle = {
     height: '100%',
     width: '100%',
-    backgroundImage: `url('https://media1.britannica.com/eb-media/57/150657-004-DA93B8A4.jpg')`
+    backgroundImage: `url(${img})`
   }
   // console.log(imgStyle)
   
   return (
   <li>
     <Link to={`/listings/${listing.id}`}>
-    <div className='listing-list-img-box'>
+    <div className='listing-list-img-box' >
       <div className='listing-list-img' style={imgStyle}></div>
     </div>
     

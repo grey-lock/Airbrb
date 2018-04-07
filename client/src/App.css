@@ -65,10 +65,6 @@
 	max-width: 300px;
 }
 
-.listing-list-img-box {
-    width: 100%;
-  }
-
 .listing-list ul {
 	list-style: none;
 	display: flex;
@@ -102,17 +98,29 @@
 	margin: 8px 0;
 }
 
-.list-list-img {
+/*.header-greeting {*/
+/*	max-width: 600px;*/
+/*}*/
+
+.header-greeting h1 {
+	font-size: 48px;
+}
+
+.header-greeting strong {
+	color: #ff5a5f;
+	font-weight: bold;
+}
+
+.listing-list-img {
 	padding-top: 67%;
 	background-size: cover;
 	background-position: 50% 50%;
 	background-repeat: no-repeat;
 }
 
-.header-greeting strong {
-	color: #FF5A5F;
-	font-weight: bold;
-}
-div.listing-list-img-box {
-  background-image: url('https://travel.usnews.com/static-travel/images/destinations/289/bora_bora_main_image.jpg')
+.listing-page-img {
+	padding-top: 40%;
+	background-size: cover;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
 }

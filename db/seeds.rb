@@ -22,6 +22,16 @@ Review.destroy_all
   
 end
 
+User.create(
+  email: 'test@test.com',
+  username: 'test123',
+  password: 'testtest',
+  session_token: SecureRandom::urlsafe_base64(16),
+  firstname: Faker::Name.first_name,
+  lastname: Faker::Name.last_name,
+  img_url: Faker::LoremPixel.image('100x100', false, 'people')
+  )
+
 LISTING_RULES = [
   
   "* After your booking is accepted, we will ask your email address to generate a special lock code for you and send it directly to your email. Make sure you get the security lock codes. If you still not get it days before your check-in, please contact us to get them.
