@@ -1,9 +1,11 @@
 import ListingsList from './ListingsList'
 import { fetchListings } from '../../actions/listing_actions'
-import { listingsReducer } from '../../reducers/listings_reducer'
+// import { listingsReducer } from '../../reducers/listings_reducer'
 import { connect } from 'react-redux'
 
-const mapStateToProps = (state) => {
+// State from the reducer is being mapped to the props being passed in
+// 
+const mapStateToProps = state => {
   // console.log(listings)
   console.log('in mapStateToProps', state)
   return ({
@@ -11,10 +13,13 @@ const mapStateToProps = (state) => {
   })
 }
 
-const mapDispatchToProps = (dispatch) => {
-  // console.log(dispatch)
+// Hold references to a function which get executed to dispatch an action
+const mapDispatchToProps = dispatch => {
+  console.log('in mapDispatchToProps', dispatch)
   return ({
+    // Whenever this property is executed, this method will fire
     fetchListings: () => dispatch(fetchListings())
+    // Will need a function to add the listing here
   })
 }
 

@@ -21,7 +21,7 @@ const NavBar = () => {
               <Link to='/listings' className='nav-link'>Homes</Link>
             </li>
             <li className="nav-item">
-              <Link to='/bookings'className="nav-link">Become a host</Link>
+              <Link to='/listings/new'className="nav-link">Become a host</Link>
             </li>
             <li className="nav-item">
               <Link to='/about' className='nav-link'>About</Link>

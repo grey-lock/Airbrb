@@ -27,7 +27,7 @@ const ListingsListItem = ({ listing }) => {
       </div>
       
       <div className='listing-list-item-desc'>
-        <span>{listing.listing_type}</span>
+        <span>{listing.prop_type}</span>
         <span aria-hidden="true"> · </span>
         <span>{listing.beds} { listing.beds === 1 ? "bed" : "beds" }</span>
       </div>
