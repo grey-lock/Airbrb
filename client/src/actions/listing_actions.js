@@ -11,6 +11,7 @@ const headers = {
 
 // Action Creators
 const getListings = listings => { 
+  console.log('In GetListings')
   return { type: 'GET_LISTINGS', listings }
 }
 

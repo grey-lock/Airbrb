@@ -217,8 +217,6 @@ class ListingsNewForm extends Component {
 }
 // Form might have to be its own component
 
-// Will need to connect to state to update the store upon submit
-
 const mapStateToProps = state => {
   return {
     state: initialState
