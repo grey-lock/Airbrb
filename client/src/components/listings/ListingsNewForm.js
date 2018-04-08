@@ -198,7 +198,7 @@ class ListingsNewForm extends Component {
                   <br/>
                   
               </form>
-              
+              {/* Redirect to /listings upon creation or return to form */}
               {fireRedirect && (
                 <Redirect to={from || '/listings'}/>
                )}
