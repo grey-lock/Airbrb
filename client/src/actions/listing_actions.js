@@ -9,28 +9,18 @@ const headers = {
 }
 
 // Action Creators
-const getListings = listings => {
-  console.log('In getListings')
-  return {
-    type: 'GET_LISTINGS',
-    listings
-  }
+const getListings = listings => { 
+  return { type: 'GET_LISTINGS', listings }
 }
 
 const getListing = listing => {
   console.log('In getListing')
-  return {
-    type: 'GET_LISTING',
-    listing
-  }
+  return { type: 'GET_LISTING', listing }
 }
 
 const addListing = listing => {
   console.log('In addListing')
-  return {
-    type: 'ADD_LISTING',
-    listing
-  }
+  return { type: 'ADD_LISTING', listing }
 }
 
 // Async Actions
@@ -50,14 +40,15 @@ export const fetchListings = () => {
 
 export const createListing = listing => {
   console.log('CREATING Listing by POST')
+  // debugger
   return dispatch => {
     return fetch(`${API_URL}/listings`, { 
         body: JSON.stringify({ listing }),
         method: 'POST',
         headers
       })
-      .then(resp => Promise.all([resp.ok, resp.json()]))
-      .then(([resp, payload]) => {
+      .then( resp => Promise.all([resp.ok, resp.json()]) )
+      .then( ([resp, payload]) => {
         return dispatch(addListing(payload))
       })
       .catch(error => console.log(error))
