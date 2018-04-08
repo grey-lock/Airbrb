@@ -7,7 +7,7 @@ import { connect } from 'react-redux'
 // 
 const mapStateToProps = state => {
   // console.log(listings)
-  console.log('in mapStateToProps', state)
+  console.log('mapStateToProps', state)
   return ({
     listings: state.listings
   })
@@ -15,7 +15,7 @@ const mapStateToProps = state => {
 
 // Hold references to a function which get executed to dispatch an action
 const mapDispatchToProps = dispatch => {
-  console.log('in mapDispatchToProps', dispatch)
+  console.log('mapDispatchToProps', dispatch)
   return ({
     // Whenever this property is executed, this method will fire
     fetchListings: () => dispatch(fetchListings())

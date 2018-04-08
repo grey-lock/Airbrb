@@ -12,7 +12,7 @@ const listingsReducer = (state = [], action) => {
       console.log(action.listings)
       return action.listings
     case 'ADD_LISTING':
-      // Must return original state and append the new state
+      // Do not mutate the original state and create and append the new state
       return [...state, action.listing]
     default:
       return state

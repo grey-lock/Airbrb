@@ -12,7 +12,7 @@ class ListingsList extends React.Component {
     const listingItems = listings.map(listing => <ListingsListItem key={listing.id} listing={listing} />)
     
     // If no listings return no results otherwise return each component
-    console.log('In the component')
+    console.log('Loading component')
     return (
       listings.length === 0 ? 
       <div>No results.</div> 

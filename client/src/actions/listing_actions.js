@@ -36,9 +36,9 @@ const addListing = listing => {
 // Async Actions
 
 export const fetchListings = () => {
-  console.log('in fetchListings in listingActions')
+  console.log('firing fetchListings in listingActions action')
   return dispatch => {
-    console.log(dispatch)
+    // console.log(dispatch)
     return fetch(`${API_URL}/listings`, { headers })
     // .then(console.log(headers))
     .then(resp => resp.json())
