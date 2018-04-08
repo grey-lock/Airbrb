@@ -1,15 +1,19 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { createListing } from '../../actions/listing_actions'
+import { Redirect } from 'react-router'
+
 
 // Will need an initial state to empty the form after submission
 
 const initialState = {
-  host_id: null,
+  fireRedirect: false,
+  host_id: 1,
   title: '',
   description: '',
   address: '',
-  lat: null,
-  long: null,
+  lat: 9.8820,
+  long: 85.5290,
   price: 1,
   prop_type: '',
   room_type: 'Entire place',
@@ -41,11 +45,19 @@ class ListingsNewForm extends Component {
   
   handleOnSubmit = e => {
     e.preventDefault()
-    // Need to add an action that creates the room
-  
+    
+    this.props.createListing(this.state)
+      .then(() => {this.setState({
+        fireRedirect: true})
+      })
+    
   }
   
   render() {
+    
+    const { from } = this.props.location.state || '/listings/new'
+    const { fireRedirect } = this.state
+    
     return(
       <div className='container'>
         <div className='new-listing-header'>
@@ -187,6 +199,10 @@ class ListingsNewForm extends Component {
                   
               </form>
               
+              {fireRedirect && (
+                <Redirect to={from || '/listings'}/>
+               )}
+              
             </div>
           </div>
         </div>
@@ -203,4 +219,10 @@ class ListingsNewForm extends Component {
 
 // Will need to connect to state to update the store upon submit
 
-export default ListingsNewForm
+const mapStateToProps = state => {
+  return {
+    state: initialState
+  }
+}
+
+export default connect(mapStateToProps, { createListing })(ListingsNewForm)
