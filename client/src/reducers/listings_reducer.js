@@ -8,7 +8,6 @@ const listingsReducer = (state = [], action) => {
     case 'GET_LISTING':
       return action.listing
     case 'GET_LISTINGS':
-  let c = console.log(action.listing)
       // console.log(action.listings)
       return action.listings
     case 'ADD_LISTING':

@@ -2,6 +2,7 @@ import fetch from 'isomorphic-fetch'
 
 const API_URL = process.env.REACT_APP_API_URL
 
+
 // Assign this to clean up fetch code
 const headers = {
   'Accept': 'application/json',
@@ -23,35 +24,28 @@ const addListing = listing => {
   return { type: 'ADD_LISTING', listing }
 }
 
+
 // Async Actions
 
-export const fetchListings = () => {
+export const fetchListings = () => dispatch => { // return the dispatch
   console.log('firing fetchListings in listingActions action')
-  return dispatch => {
-    // console.log(dispatch)
-    return fetch(`${API_URL}/listings`, { headers }) // Get the listings
-    .then(resp => resp.json()) // Convert to json
-    .then(payload => {
-      dispatch(getListings(payload)) // dispatch the action function
-    })
-    .catch(error => console.log(error)); // Return an error if any
-  }
+  return fetch(`${API_URL}/listings`) // Fetch the listings from the API
+    .then(resp => resp.json()) // Parse the resp
+    .then(listings => dispatch(getListings(listings)), // Pass the parsed response to the dispatch
+    console.error
+    )
 }
 
-export const createListing = listing => {
+export const createListing = listing => dispatch => { // return the dispatch
   console.log('CREATING Listing by POST')
-  // debugger
-  return dispatch => {
-    return fetch(`${API_URL}/listings`, { 
-        body: JSON.stringify({ listing }),
-        method: 'POST',
-        headers
-      })
-      .then( resp => Promise.all([resp.ok, resp.json()]) )
-      .then( ([resp, payload]) => {
-        return dispatch(addListing(payload))
-      })
-      .catch(error => console.log(error))
-  }
+  return fetch(`${API_URL}/listings`, { // POST to the server
+    body: JSON.stringify({ listing }), // JSON the listing data
+    method: 'POST',
+    headers
+    })
+    .then(resp => resp.json()) // Server responds with success or fail
+    .then(listing => dispatch(addListing(listing)), // Dispatch to update the state
+    console.error
+    )
 }
 
