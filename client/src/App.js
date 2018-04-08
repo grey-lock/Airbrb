@@ -3,6 +3,7 @@ import './App.css';
 import { Route, Link, Switch } from 'react-router-dom'
 import Home from './components/Home'
 import LoginFormContainer from './components/LoginFormContainer'
+import ListingsContainer from './components/listings/ListingsContainer'
 import NavBar from './components/header/NavBar'
 import 'bootswatch/dist/lumen/bootstrap.css'
 
@@ -14,8 +15,11 @@ class App extends Component {
           <NavBar />
         </header>
         <div className="App-intro">
-          <Route exact path="/" component={Home} />
-          <LoginFormContainer />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path='/listings' component={ListingsContainer} />
+            <LoginFormContainer />
+          </Switch>
         </div>
         
       </div>
