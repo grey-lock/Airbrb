@@ -87,8 +87,42 @@ const ListingDetail = ({ listing }) => {
             </ul>
           </div>
         </div>
+        {/* prices/disclaimer */}
+        <div className="listing-detail-box">
+          <div className="box-title">
+            <h4>Prices</h4>
+          </div>
+          <div className="box-info">
+            <ul>
+              <li>Extra people: <strong>No Charge</strong></li>
+              <li>Weekly Discount: <strong>10%</strong></li>
+              <li>Cleaning Fee: <strong>${ Math.floor(listing.price / 8) }</strong></li>
+            </ul>
+            <div className="price-disclaimer">
+              <strong>Always communicate through Airbrb</strong>
+              <p>For the safety of all our hosts and guests, never transfer funds or communicate outside of the Airbrb website or app.</p>
+            </div>
+          </div>
+        </div>
 
+        {/* description */}
+        <div className="listing-detail-box">
+          <div className="box-title">
+            <h4>Description</h4>
+          </div>
+          <div className="box-info">
+            <p>{listing.description}</p>
+          </div>
+        </div>
         
+        <div className="listing-detail-box">
+          <div className="box-title">
+            <h4>House Rules</h4>
+          </div>
+          <div className="box-info">
+            <p>{listing.rules}</p>
+          </div>
+        </div>
 
 
         </div>
