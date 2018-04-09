@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import img from '../../img/abnb-logo.png'
+import img from '../../assets/img/abnb-logo.png'
 
 const NavBar = () => {
   return (
