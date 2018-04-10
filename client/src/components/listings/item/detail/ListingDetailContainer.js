@@ -3,7 +3,7 @@ import ListingDetail from './ListingDetail'
 
 const ListingDetailContainer = props => {
   return(
-    <ListingDetail listing={props.listing} />
+    <ListingDetail listing={props} />
     )
 }
 

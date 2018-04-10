@@ -37,6 +37,15 @@ export const fetchListings = () => dispatch => { // return the dispatch
     )
 }
 
+export const fetchListing = listing => dispatch => {
+  // debugger
+  return fetch(`${API_URL}/listings/${listing.id}`)
+  .then(resp => resp.json())
+  .then(listing => dispatch(getListing(listing)),
+  console.error
+  )
+}
+
 export const createListing = listing => dispatch => { // return the dispatch
   console.log('CREATING Listing by POST')
   return fetch(`${API_URL}/listings`, { // POST to the server

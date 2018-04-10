@@ -3,7 +3,7 @@
 // }
 
 const listingsReducer = (state = [], action) => {
-  // console.log('In reducerc')
+  // console.log('In reducer')
   switch(action.type) {
     case 'GET_LISTING':
       return action.listing

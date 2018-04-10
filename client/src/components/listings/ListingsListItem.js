@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+// import ListingPageContainer from './item/ListingPageContainer'
 
 
 const ListingsListItem = ({ listing }) => {
@@ -12,9 +13,11 @@ const ListingsListItem = ({ listing }) => {
     backgroundImage: `url(${img})`
   }
   // console.log(imgStyle)
-  
   return (
   <li>
+  {/*<Switch>
+<Route path={`${this.props}/listings/:listingId`} component={ListingPageContainer}/>
+</Switch>*/}
     <Link to={`/listings/${listing.id}`}>
     <div className='listing-list-img-box' >
       <div className='listing-list-img' style={imgStyle}></div>
