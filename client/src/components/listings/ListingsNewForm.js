@@ -55,7 +55,7 @@ class ListingsNewForm extends Component {
   
   render() {
     
-    const { from } = this.props.location.state || '/listings/new'
+    const { from } = this.props.location.state || '/listings/new' || '/listings/:listingId'
     const { fireRedirect } = this.state
     
     return(

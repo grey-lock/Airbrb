@@ -6,7 +6,7 @@ const ListingImageContainer = props => { // Be mindful of the props being passed
     width: '100%', 
     backgroundImage: `url(${props.listing.img_url})`
   }
-  debugger
+  // debugger
   return (
     <div className='listing-page-img' style={imgStyle}>
     </div>

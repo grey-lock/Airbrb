@@ -7,7 +7,7 @@ import{ bindActionCreators } from 'redux'
 
 const mapStateToProps = listings => {
   return {
-    listing: listings
+    listing: listings 
   }
 }
 
