@@ -10,7 +10,7 @@ class ListingPage extends React.Component {
   
   render() {
     
-  debugger
+  // debugger
   const listing = this.props.listing.listings.currentRoom
   if (!listing) return null // Null if no listing found
    
