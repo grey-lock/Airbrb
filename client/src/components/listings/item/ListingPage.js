@@ -10,7 +10,7 @@ class ListingPage extends React.Component {
   
   render() {
     
-  const  { listing } = this.props
+  const listing = this.props.listing.listings
   // if (!listing) return null // Null if no listing found
   // debugger
    
