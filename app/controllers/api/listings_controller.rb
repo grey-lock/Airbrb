@@ -3,6 +3,11 @@ class Api::ListingsController < ApplicationController
   def index
     if params[:id].present?
       @listings = Listing.where(id: params[:id])
+      
+    # Search by Map
+    elsif params.values_at(*%i( min_long max_long min_lat max_lat )).all?(&:present?)
+      @listings = Listing.search(search_params.to_h.symbolize_keys)
+      render json: @places
     
     # Show random listings
     elsif search_params_empty
@@ -37,6 +42,7 @@ class Api::ListingsController < ApplicationController
   end
   
   private
+
   
   def set_listing
     @listing = Listing.find_by(id: params[:id])
@@ -75,7 +81,11 @@ class Api::ListingsController < ApplicationController
       :price,
       :num_guests,
       :bedrooms,
-      :beds
+      :beds,
+      :min_long,
+      :max_long,
+      :min_lat,
+      :max_lat
     )
   end
   
