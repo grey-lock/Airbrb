@@ -16,7 +16,7 @@ class ListingsList extends React.Component {
   
   render() {
     const listings = this.props.listings.listings
-    // debugger
+    debugger
     if (!listings) return null // Null if no listing found
     const listingItems = listings.map(listing => <ListingsListItem key={listing.id} listing={listing} />)
 

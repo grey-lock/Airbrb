@@ -8,15 +8,15 @@ class Listing < ApplicationRecord
   # Cannot seed with this validation
   # validates_attachment_content_type :img_url, content_type: /\Aimage\/.*\z/
   
-  validates :host_id, :title, :description, :address, :lat, :long, :price, :prop_type, :room_type, :num_guests, :bedrooms, :beds, :rules, presence: true
+  validates :host_id, :title, :description, :address, :lat, :lng, :price, :prop_type, :room_type, :num_guests, :bedrooms, :beds, :rules, presence: true
   
   #  For google maps search
-  scope :by_long, -> (min, max) { min && max ? where('long >= :min AND long <= :max', min: min, max: max) : all }
-  scope :by_lat, -> (min, max) { min && max ? where('lat >= :min AND lat <= :max', min: min, max: max) : all }
+  # scope :by_lng, -> (min, max) { min && max ? where('long >= :min AND long <= :max', min: min, max: max) : all }
+  # scope :by_lat, -> (min, max) { min && max ? where('lat >= :min AND lat <= :max', min: min, max: max) : all }
  
   API_RESULTS_LIMIT = 100
  
-  def self.search(min_lat:, max_lat:, min_long:, max_long:)
+  def self.search(min_lat:, max_lat:, min_lng:, max_lng:)
     by_lat(min_lat, max_lat).
       by_long(min_lng, max_lng).
       limit(API_RESULTS_LIMIT)

@@ -7,7 +7,7 @@ class CreateListings < ActiveRecord::Migration[5.1]
       t.text    :description, null: false
       t.text    :address, null: false
       t.float   :lat, null: false
-      t.float   :long, null: false
+      t.float   :lng, null: false
       t.integer :price, null: false
       t.string  :prop_type, null: false
       t.string  :room_type, null: false
