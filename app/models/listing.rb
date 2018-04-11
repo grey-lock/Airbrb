@@ -11,8 +11,8 @@ class Listing < ApplicationRecord
   validates :host_id, :title, :description, :address, :lat, :lng, :price, :prop_type, :room_type, :num_guests, :bedrooms, :beds, :rules, presence: true
   
   #  For google maps search
-  # scope :by_lng, -> (min, max) { min && max ? where('long >= :min AND long <= :max', min: min, max: max) : all }
-  # scope :by_lat, -> (min, max) { min && max ? where('lat >= :min AND lat <= :max', min: min, max: max) : all }
+  scope :by_lng, -> (min, max) { min && max ? where('long >= :min AND long <= :max', min: min, max: max) : all }
+  scope :by_lat, -> (min, max) { min && max ? where('lat >= :min AND lat <= :max', min: min, max: max) : all }
  
   API_RESULTS_LIMIT = 100
  

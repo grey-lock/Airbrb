@@ -5,7 +5,7 @@ class ListingSerializer < ActiveModel::Serializer
       :description,
       :address,
       :lat,
-      :long,
+      :lng,
       :price,
       :prop_type,
       :room_type,

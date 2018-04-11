@@ -5,8 +5,8 @@ class Api::ListingsController < ApplicationController
       @listings = Listing.where(id: params[:id])
       
     # Search by Map
-    # elsif params.values_at(*%i( min_lng max_lng min_lat max_lat )).all?(&:present?)
-    #   @listings = Listing.search(search_params.to_h.symbolize_keys)
+    elsif params.values_at(*%i( min_lng max_lng min_lat max_lat )).all?(&:present?)
+      @listings = Listing.search(search_params.to_h.symbolize_keys)
     #   # render json: @listings
     
     # Show random listings
