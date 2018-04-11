@@ -15,9 +15,7 @@ const ListingsListItem = ({ listing }) => {
   // console.log(imgStyle)
   return (
   <li>
-  {/*<Switch>
-<Route path={`${this.props}/listings/:listingId`} component={ListingPageContainer}/>
-</Switch>*/}
+
     <Link to={`/listings/${listing.id}`}>
     <div className='listing-list-img-box' >
       <div className='listing-list-img' style={imgStyle}></div>
