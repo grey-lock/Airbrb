@@ -26,7 +26,7 @@ class Map extends React.Component {
   
   render() {
     const { lat, lng } = this.state
-    const listings = [<PlaceMarker lat={lat} long={lng} price={20} />]
+    const listings = [<PlaceMarker lat={lat} lng={lng} price={20} title={"Hotel"} description={"Hotel desc"} />]    
     
     return (
       <div style={{width: `750px`, height: `750px`}}>
