@@ -1,5 +1,6 @@
 import React from 'react'
 // import { Route, Switch } from 'react-router-dom'
+import Map from '../gmap/Map'
 
 import ListingsListItem from './ListingsListItem'
 // import ListingPageContainer from './item/ListingPageContainer'
@@ -31,7 +32,11 @@ class ListingsList extends React.Component {
         <ul>
             { listingItems }
         </ul>
+        <div className='map-container'>
+          <Map />
+        </div>
       </div>
+
       )
   }
 }

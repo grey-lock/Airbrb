@@ -8,7 +8,6 @@ import ListingsContainer from './components/listings/ListingsContainer'
 import ListingsNewForm from './components/listings/ListingsNewForm'
 import AboutPage from './components/AboutPage'
 import NavBar from './components/header/NavBar'
-import Map from './components/gmap/Map'
 import 'bootswatch/dist/lumen/bootstrap.css'
 
 class App extends Component {
@@ -29,9 +28,7 @@ class App extends Component {
             {/*<LoginFormContainer />*/}
           </Switch>
         </div>
-        <div className='map-container'>
-          <Map />
-        </div>
+
       </div>
     );
   }

@@ -21,7 +21,7 @@ class PlaceMarker extends React.Component {
   }
   render() {
     const { showTooltip } = this.state
-    const { lat, lng, title, price, description } = this.props
+    const { lat, lng, title, price, description, id } = this.props
     
     return (
       <Marker
@@ -29,9 +29,11 @@ class PlaceMarker extends React.Component {
           lat: parseFloat(lat),
           lng: parseFloat(lng)
         }}
-        onClick={this.clickTooltip.bind(this)}>
+        onClick={this.clickTooltip.bind(this)}
+        key={`marker${id}`}>
           {showTooltip && (
-            <PlaceInfoWindow description={description}
+            <PlaceInfoWindow key={`info${id}`}
+                             description={description}
                              title={title}
                              price={price}
                              closeWindow={this.closeWindow.bind(this)}/>

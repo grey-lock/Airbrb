@@ -1,8 +1,10 @@
 import React from 'react'
 import { withGoogleMap, GoogleMap } from 'react-google-maps'
 import PlaceMarker from './PlaceMarker'
+import fetch from 'isomorphic-fetch'
 
 const AirbnbMap = withGoogleMap(props => (
+  
   <GoogleMap
     ref={props.onMapMounted}
     onZoomChanged={props.handleMapChanged}
@@ -11,7 +13,9 @@ const AirbnbMap = withGoogleMap(props => (
     defaultCenter={props.center}
     defaultZoom={props.zoom}>
     
+    {console.log('props are: ', props)}
     {props.listings.length > 0 && props.listings.map(listing => (
+    
       <PlaceMarker key={`listing${listing.id}`}
                    id={listing.id}
                    lat={listing.lat}
@@ -33,12 +37,12 @@ class Map extends React.Component {
     this.yMapBounds = { min: null, max: null }
     
     this.mapFullyLoaded = false
-    this.zoom = 7
+    this.zoom = 5
     
     this.state = {
       listings: [],
-      lat: 50.0515918,
-      lng: 19.9357531
+      lat: 18.0515918,
+      lng: -74.9357531
     }
   }
   
@@ -70,7 +74,8 @@ class Map extends React.Component {
     this.setState({listings: []})
     const API_URL = process.env.REACT_APP_API_URL
 
-    fetch(`${API_URL}/listings?min_lng=${this.xMapBounds.min}&max_lng=${this.xMapBounds.max}&min_lat=${this.yMapBounds.min}&max_lat=${this.yMapBounds.max}`)
+    fetch(`${API_URL}/listings?min_lng=${this.xMapBounds.min}&max_lng=${this.xMapBounds.max}&min_lat=${this.yMapBounds.min}`,
+      { method: 'GET' })
       .then(resp => resp.json())
       .then(resp => this.setState({listings: resp}))
   }
