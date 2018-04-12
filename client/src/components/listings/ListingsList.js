@@ -1,7 +1,8 @@
 import React from 'react'
 // import { Route, Switch } from 'react-router-dom'
 import ListingsListItem from './ListingsListItem'
-// import ListingPageContainer from './item/ListingPageContainer'
+// import Map from '../gmap/Map'
+
 
 class ListingsList extends React.Component {
   componentDidMount() {
@@ -21,11 +22,10 @@ class ListingsList extends React.Component {
       <div>No results.</div> 
       :
       <div className='listing-list'>
-        <div className='display-all-rooms'>
         <ul>
             { listingItems }
         </ul>
-        </div>
+
       </div>
 
       )

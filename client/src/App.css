@@ -202,7 +202,7 @@ h4 {
 	margin: 0 20px;
 }
 
-.listing-detail .rm-refund strong, .listing-detail .listing-refund p {
+.listing-detail .listing-refund strong, .listing-detail .listing-refund p {
 	font-size: 15px;
 }
 
@@ -285,8 +285,10 @@ h4 {
 /*}*/
 
 .map-search-container {
-  position: relative;
-  float: right ;
+  position: absolute;
+  display: block;
+  top: 200px;
+  /*float: right;*/
 
 }
 /*.map-search {*/
