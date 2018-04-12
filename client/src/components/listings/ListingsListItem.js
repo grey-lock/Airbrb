@@ -14,7 +14,7 @@ const ListingsListItem = ({ listing }) => {
     zIndex: 10
   }
   // console.log(imgStyle)
-  debugger
+  // debugger
   return (
   <li>
 
