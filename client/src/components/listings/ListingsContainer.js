@@ -1,9 +1,7 @@
 import { connect } from 'react-redux'
 import { fetchListings } from '../../actions/listing_actions'
-// import { listingsReducer } from '../../reducers/listings_reducer'
 import{ bindActionCreators } from 'redux'
 import React from 'react'
-// import { Route, Switch } from 'react-router-dom'
 import ListingsListItem from './ListingsListItem'
 
 
@@ -35,22 +33,6 @@ class ListingsList extends React.Component {
       )
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // State from the reducer is being mapped to the props being passed in

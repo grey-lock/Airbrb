@@ -16,8 +16,6 @@ const Home = (props) => {
         <ListingsContainer className='col-md-8'/>
       </div>
 
-      
-      
     </div>
     )
 }

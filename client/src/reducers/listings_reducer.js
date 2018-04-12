@@ -1,6 +1,6 @@
 const initialState = {
   listings: [],
-  currentRoom: null,
+  currentRoom: null
 }
 
 const listingsReducer = (state = initialState, action) => {
