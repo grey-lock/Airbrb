@@ -22,22 +22,27 @@ class PlaceMarker extends React.Component {
   render() {
     const { showTooltip } = this.state
     const { lat, lng, title, price, description, id } = this.props
-    
+    const labelInfo = `<div class='map-price-marker"><span>$${price}</span></div>`
     return (
       <Marker
+        markerWithLabel={window.MarkerWithLabel}
+        onClick={this.clickTooltip.bind(this)}
         position={{
           lat: parseFloat(lat),
           lng: parseFloat(lng)
         }}
-        onClick={this.clickTooltip.bind(this)}
+        opacity={0}
+        labelClass="map-price-container"
+        labelContent={labelInfo}
         key={`marker${id}`}>
-          {showTooltip && (
-            <PlaceInfoWindow key={`info${id}`}
-                             description={description}
-                             title={title}
-                             price={price}
-                             closeWindow={this.closeWindow.bind(this)}/>
-          )}
+        
+        {showTooltip && (
+          <PlaceInfoWindow key={`info${id}`}
+                           description={description}
+                           title={title}
+                           price={price}
+                           closeWindow={this.closeWindow.bind(this)}/>
+        )}
       </Marker>
     )
   }

@@ -32,6 +32,8 @@
   color: #484848;
 }
 
+/* Custom Styles */ 
+
 .nav-bar {
   display: flex;
   justify-content: space-between;
