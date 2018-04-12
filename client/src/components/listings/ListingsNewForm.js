@@ -20,10 +20,10 @@ const initialState = {
   num_guests: 1,
   bedrooms: 1,
   beds: 1,
-  rules: 'Enjoy yourself.',
-  img_url: '',
+  rules: '',
+  img_url: 'https://www.islands.com/g00/3_c-7x78x78x78.jtmboet.dpn_/c-7NPSFQIFVT34x24iuuqtx3ax2fx2fx78x78x78.jtmboet.dpnx2ftjuftx2fjtmboet.dpnx2fgjmftx2ftuzmftx2f3111_2y_x2fqvcmjdx2fjtmboet-ipnfqbhf-npwf-up-bo-jtmboe-upvu.kqhx3fjuplx3dFm9_L-QIx26j21d.nbslx3djnbhf_$/$/$/$/$/$/$/$',
   wifi: true,
-  kitchen: true,
+  kitchen: false,
   ac: false,
   tv: true
 }
@@ -191,13 +191,66 @@ class ListingsNewForm extends Component {
                               value={this.state.description}
                               placeholder={this.state.description === "" ?  "Description" : this.state.description}/>
                   <br />
+                  <h3 className="form-title">List your house rules</h3>
+                  <textarea className='form-control sub-form-title'
+                              onChange={this.handleInputChange}
+                              name='rules'
+                              value={this.state.rules}
+                              placeholder={this.state.rules === "" ?  "Rules" : this.state.rules}/>
                   <br />
+                  <h2 className="form-title">Link to your image</h2>
+                  <input className="form-control sub-form-title"
+                       id="img_url-field"
+                       name="img_url"
+                       onChange={this.handleInputChange}
+                       type="text"
+                      // value={this.state.img_url} 
+                       placeholder={this.state.img_url === "" ?  "Image URL" : this.state.img_url}/>
+                  <br/>
+                  
+                  <br/>
+                  <h2 className="form-title">Amenities</h2>
+                  <h3 className="sub-form-title">Wifi?</h3>
+                  <select className='form-control'
+                          name='wifi'
+                          value={this.state.wifi} 
+                          onChange={this.handleInputChange}>
+                    <option value={true} >Yes</option>
+                    <option value={false}>No</option>
+                  </select>
+                  <br/>
+                  <h3 className="sub-form-title">Air Conditioning?</h3>
+                  <select className='form-control'
+                          name='ac'
+                          value={this.state.ac} 
+                          onChange={this.handleInputChange}>
+                    <option value={true} >Yes</option>
+                    <option value={false}>No</option>
+                  </select>
+                  <br/>
+                  <h3 className="sub-form-title">Kitchen?</h3>
+                  <select className='form-control'
+                          name='kitchen'
+                          value={this.state.kitchen} 
+                          onChange={this.handleInputChange}>
+                    <option value={true} >Yes</option>
+                    <option value={false}>No</option>
+                  </select>
+                  <br/>
+                  <h3 className="sub-form-title">TV?</h3>
+                  <select className='form-control'
+                          name='tv'
+                          value={this.state.tv} 
+                          onChange={this.handleInputChange}>
+                    <option value={true} >Yes</option>
+                    <option value={false}>No</option>
+                  </select>
+                  <br/>
+                  <br/>
+                  
                   
                   <button className="btn btn-secondary mr-2" onClick={() => this.props.history.push('/listings')}>Cancel</button>
                   <button className="btn btn-info" type="submit">Add</button>
-                  
-                  <br/>
-                  <br/>
                   
               </form>
               {/* Redirect to /listings upon creation or return to form 
