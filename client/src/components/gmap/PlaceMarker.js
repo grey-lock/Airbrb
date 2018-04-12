@@ -31,7 +31,7 @@ class PlaceMarker extends React.Component {
           lat: parseFloat(lat),
           lng: parseFloat(lng)
         }}
-        opacity={0}
+        // opacity={0}
         labelClass="map-price-container"
         labelContent={labelInfo}
         key={`marker${id}`}>

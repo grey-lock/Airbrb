@@ -10,7 +10,8 @@ const ListingsListItem = ({ listing }) => {
   const imgStyle = {
     height: '100%',
     width: '100%',
-    backgroundImage: `url(${img})`
+    backgroundImage: `url(${img})`,
+    zIndex: 10
   }
   // console.log(imgStyle)
   return (

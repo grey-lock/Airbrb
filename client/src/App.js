@@ -8,6 +8,7 @@ import ListingsContainer from './components/listings/ListingsContainer'
 import ListingsNewForm from './components/listings/ListingsNewForm'
 import AboutPage from './components/AboutPage'
 import NavBar from './components/header/NavBar'
+import Map from './components/gmap/Map'
 import 'bootswatch/dist/lumen/bootstrap.css'
 
 class App extends Component {
@@ -27,6 +28,9 @@ class App extends Component {
             <Route exact path='/about' component={AboutPage} />
             {/*<LoginFormContainer />*/}
           </Switch>
+        </div>
+        <div className='map-search-container'>
+          <Map className='map-search'/>
         </div>
 
       </div>

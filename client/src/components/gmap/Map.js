@@ -97,7 +97,7 @@ class Map extends React.Component {
     const { lat, lng, listings } = this.state
     
     return (
-      <div style={{width: `750px`, height: `750px`}}>
+      <div style={{width: `600px`, height: `600px`}}>
         {/*<ul>
           <li>lng: {lng}</li>
           <li>lat: {lat}</li>
