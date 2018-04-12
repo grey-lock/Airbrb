@@ -2,7 +2,56 @@ import { connect } from 'react-redux'
 import { fetchListings } from '../../actions/listing_actions'
 // import { listingsReducer } from '../../reducers/listings_reducer'
 import{ bindActionCreators } from 'redux'
-import ListingsList from './ListingsList'
+import React from 'react'
+// import { Route, Switch } from 'react-router-dom'
+import ListingsListItem from './ListingsListItem'
+
+
+
+class ListingsList extends React.Component {
+  componentDidMount() {
+    this.props.fetchListings()
+  }
+  
+  render() {
+    const listings = this.props.listings.listings
+    // debugger
+    if (!listings) return null // Null if no listing found
+    const listingItems = listings.map(listing => <ListingsListItem key={listing.id} listing={listing} />)
+
+    // If no listings return no results otherwise return each component
+    console.log('Loading ListingsList component')
+    return (
+      listings.length === 0 ? 
+      <div>No results.</div> 
+      :
+      <div className='listing-list'>
+        <ul>
+            { listingItems }
+        </ul>
+
+      </div>
+
+      )
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // State from the reducer is being mapped to the props being passed in
 const mapStateToProps = state => {
