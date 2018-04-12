@@ -62,6 +62,8 @@ class ListingsNewForm extends Component {
       <div className='container'>
         <div className='new-listing-header'>
           <span id='new-listing-header-title'>Create a new listing</span>
+          <br/>
+          <br/>
           <span id='new-listing-header-desc'>Please fill out all of the fields below.</span>
         </div>
         

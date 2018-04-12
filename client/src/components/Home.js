@@ -10,10 +10,10 @@ const Home = (props) => {
         <h1><strong>Airbrb</strong> <br/>Book unique homes and experiences all over the world.</h1>
       </div>
       <div className='col-md-8'>
-        <ListingsContainer />
+        <ListingsContainer className='col-md-8'/>
       </div>
-      <div className='col-md-4'>
-        <Map className='map-search-container'/>
+      <div className='col-md-4 map-search-container'>
+        <Map className='col-md-4'/>
       </div>
       
       
