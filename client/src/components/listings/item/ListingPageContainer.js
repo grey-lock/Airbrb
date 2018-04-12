@@ -7,6 +7,7 @@ import ListingDetailContainer from './detail/ListingDetailContainer'
 import ListingImageContainer from './image/ListingImageContainer'
 
 class ListingPage extends React.Component {
+
   // When the component loads, fetch the specific listing
   componentDidMount() {
     this.props.fetchListing(this.props.match.params.listingId)
@@ -40,6 +41,7 @@ class ListingPage extends React.Component {
 
 
 const mapStateToProps = listings => {
+  // console.log(listings)
   return {
     listing: listings 
   }
