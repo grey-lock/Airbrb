@@ -1,19 +1,19 @@
 # Airbrrrb
 
-[Live Site (heroku)]: https://airbrrrb.herokuapp.com
+[Live Site (heroku)]: https://airbrb.herokuapp.com
 
 ## Minimum Viable Product
 
-Airbrrrb is a web application inspired by the world famous Airbnb site. The backend is built with a Rails 5 API and handles data persistence with a Postgresql database schema. The frontend is built with React & Redux and utilizes React Router and Redux Thunk middleware for state management. The app is also styled with Bootstrap CSS.
+Airbrb is a web application inspired by the world famous Airbnb site. The backend is built with a Rails 5 API and handles data persistence with a Postgresql database schema. The frontend is built with React & Redux and utilizes React Router and Redux Thunk middleware for state management. The app is also styled with Bootstrap CSS.
 
 ### Features
 
-- [ ] User signup & Login w/ Auth0
-- [ ] Listings 
+- [ ] User signup & Login
+- [x] Listings 
 - [ ] Bookings
 - [ ] Reviews
 - [ ] Search (by location, availability, price)
-- [ ] Google Maps API integration
+- [x] Google Maps API integration
 
 #### Bonus
 - [ ] Messaging
