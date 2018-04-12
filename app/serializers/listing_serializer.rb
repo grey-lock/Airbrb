@@ -1,4 +1,5 @@
 class ListingSerializer < ActiveModel::Serializer
+  has_many :reviews
   attributes :id,
       :host_id,
       :title,

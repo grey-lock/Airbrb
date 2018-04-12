@@ -1,6 +1,6 @@
 class Listing < ApplicationRecord
   has_many :bookings
-  has_many :reviews, through: :users
+  has_many :reviews
   # belongs_to :host, 
   #                 class_name: 'User',
   #                 foreign_key: :host_id

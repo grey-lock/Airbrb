@@ -17,7 +17,7 @@ const ListingDetail = ({listing}) => {
           <h2>{list.title}</h2>
           <p>{list.address}</p>
           <span>
-            <span>{ `${list.reviews}` + (list.reviews === 1 ? 'review' : 'reviews') }</span>
+            <span>{ `${list.reviews.length}` + (list.reviews.length === 1 ? ' review' : ' reviews') }</span>
           </span>
         </div>
 

@@ -14,6 +14,7 @@ const ListingsListItem = ({ listing }) => {
     zIndex: 10
   }
   // console.log(imgStyle)
+  debugger
   return (
   <li>
 
@@ -35,7 +36,7 @@ const ListingsListItem = ({ listing }) => {
       </div>
       
       <div>
-        <span className="review-count">{ ` ${listing.reviews} ` + (listing.reviews === 1 ? 'review' : 'reviews') }</span>
+        <span className="review-count">{ ` ${listing.reviews.length} ` + (listing.reviews.length === 1 ? 'review' : 'reviews') }</span>
       </div>
     </div>
     </Link>

@@ -700,6 +700,18 @@ LISTINGS.each do |list|
     new_listing = Listing.create!(value)
     sample_listings.push(new_listing)
   end
+  
+  
+20.times do 
+  Review.create!(
+    user_id: Random.rand(43..52),
+    listing_id: Random.rand(77..84),
+    rating: Random.rand(1..5),
+    body: REVIEWS.sample
+    )
+end
+  
+
 
 # sample_listings.each do |listing|
 #   rand_review_amt = Random.rand(1..20)
