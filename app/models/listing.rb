@@ -8,7 +8,7 @@ class Listing < ApplicationRecord
   # Cannot seed with this validation
   # validates_attachment_content_type :img_url, content_type: /\Aimage\/.*\z/
   
-  validates :host_id, :title, :description, :address, :lat, :lng, :price, :prop_type, :room_type, :num_guests, :bedrooms, :beds, :rules, presence: true
+  validates :host_id, :title, :description, :address, :price, :prop_type, :room_type, :num_guests, :bedrooms, :beds, presence: true
   
   #  For google maps search
   scope :by_lng, -> (min, max) { min && max ? where('lng >= :min AND lng <= :max', min: min, max: max) : all }

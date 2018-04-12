@@ -4,7 +4,7 @@ class Review < ApplicationRecord
   
   validates :body, :rating, presence: true
   
-  validates :user_id, uniqueness: { scope: :listing_id, message: "You may only review a room once." }
+  # validates :user_id, uniqueness: { scope: :listing_id, message: "You may only review a room once." }
   validates :rating, presence: { message: "You must leave a rating."}
   validates :body, presence: { message: "You must write a comment."}
   validate :min_comment_length

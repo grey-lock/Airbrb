@@ -69,6 +69,7 @@ LISTINGS = [
     room_type: "Whole House",
     num_guests: 10,
     img_url: "https://travel.usnews.com/static-travel/images/destinations/73/gettyimages-462922955.jpg",
+    wifi: true
   },
   listing1: {
     title: "Paradise in Honolulu - Oahu",
@@ -94,6 +95,7 @@ LISTINGS = [
     room_type: "Whole House",
     num_guests: 5,
     img_url: "https://travel.usnews.com/static-travel/images/destinations/59/diamond_head_state_monument.jpg",
+    wifi: true
   },
   listing2: {
     title: "Make the Move to Maui",
@@ -110,6 +112,7 @@ LISTINGS = [
     room_type: "Single listing",
     num_guests: 3,
     img_url: "https://travel.usnews.com/static-travel/images/destinations/61/w1_getty_averyphotography.jpg",
+    wifi: true
   },
   listing3: {
     title: "Beaches, Volcanoes, Pagodas: Bali",
@@ -126,6 +129,7 @@ LISTINGS = [
     room_type: "Whole House",
     num_guests: 4,
     img_url: "https://travel.usnews.com/static-travel/images/destinations/279/bali_pura_ulun_danu_bratan_temple_sun_getty_afriandi.jpg",
+    wifi: true
   },
   listing4: {
     title: "The best Island, Kauai",
@@ -144,6 +148,7 @@ LISTINGS = [
     room_type: "Single listing",
     num_guests: 3,
     img_url: "https://travel.usnews.com/static-travel/images/destinations/60/gettyimages-584212910.jpg",
+    wifi: true
   },
   listing5: {
     title: "The biggest and best, The Big Island",
@@ -160,6 +165,7 @@ LISTINGS = [
     room_type: "Entire place",
     num_guests: 12,
     img_url: "https://travel.usnews.com/static-travel/images/destinations/58/puuhonua_park.jpg",
+    wifi: true
   },
   listing6: {
     title: "Get Phuket",
@@ -176,6 +182,7 @@ LISTINGS = [
     room_type: "Single listing",
     num_guests: 3,
     img_url: "https://travel.usnews.com/static-travel/images/destinations/364/big_buddha_getty.jpg",
+    wifi: true
   },
   listing7: {
     title: "Stay on the water and chill out",
@@ -192,6 +199,7 @@ LISTINGS = [
     room_type: "Entire place",
     num_guests: 8,
     img_url: "https://travel.usnews.com/static-travel/images/destinations/288/tahiti_main_getty_samantha_t_photography.jpg",
+    wifi: true
   },
   listing8: {
     title: "British is Better",
@@ -208,6 +216,7 @@ LISTINGS = [
     room_type: "Entire place",
     num_guests: 4,
     img_url: "https://travel.usnews.com/static-travel/images/destinations/74/foxys_flickr_anoldent.jpg",
+    wifi: true
   },
   listing9: {
     title: "Hellenic Temple in Corfu",
@@ -224,6 +233,7 @@ LISTINGS = [
     room_type: "Entire place",
     num_guests: 30,
     img_url: "https://travel.usnews.com/static-travel/images/destinations/99/hellenic_temple_corfu.jpg",
+    wifi: true
   },
   listing10: {
     title: "Bora Bora, So Good They Named it Twice",
@@ -240,6 +250,7 @@ LISTINGS = [
     room_type: "Entire place",
     num_guests: 14,
     img_url: "https://travel.usnews.com/static-travel/images/destinations/289/bora_bora_main_image.jpg",
+    wifi: true
   },
   listing11: {
     title: "Get Darwininian, Go Galapagos",
@@ -257,6 +268,7 @@ LISTINGS = [
     room_type: "Single listing",
     num_guests: 5,
     img_url: "https://travel.usnews.com/static-travel/images/destinations/320/bartolome_island.jpg",
+    wifi: true
   },
   listing12: {
     title: "Lose your worries in Lana'i",
@@ -273,6 +285,7 @@ LISTINGS = [
     room_type: "Entire place",
     num_guests: 8,
     img_url: "https://travel.usnews.com/static-travel/images/destinations/216/lanai_as_a_daytrip.jpg",
+    wifi: true
   },
   listing13: {
     title: "Get away, Guadeloupe",
@@ -289,6 +302,7 @@ LISTINGS = [
     room_type: "Single listing",
     num_guests: 2,
     img_url: "https://travel.usnews.com/static-travel/images/destinations/369/gallery_2.jpg",
+    wifi: true
   },
   listing14: {
     title: "Stay at St. Lucia",
@@ -305,6 +319,7 @@ LISTINGS = [
     room_type: "Entire place",
     num_guests: 6,
     img_url: "https://travel.usnews.com/static-travel/images/destinations/233/around_town.jpg",
+    wifi: true
   },
   listing15: {
     title: "Relax in the sand at Cozumel",
@@ -321,6 +336,7 @@ LISTINGS = [
     room_type: "Entire place",
     num_guests: 10,
     img_url: "https://travel.usnews.com/static-travel/images/destinations/15/san_gervasio-2016-getty.jpg",
+    wifi: true
   },
   listing16: {
     title: "Huge Guesthouse in Crete",
@@ -337,6 +353,7 @@ LISTINGS = [
     room_type: "Entire place",
     num_guests: 25,
     img_url: "https://travel.usnews.com/static-travel/images/destinations/100/154602043.jpg",
+    wifi: true
   },
   listing17: {
     title: "Forget everything else, go to Fiji",
@@ -353,6 +370,7 @@ LISTINGS = [
     room_type: "Entire place",
     num_guests: 12,
     img_url: "https://travel.usnews.com/static-travel/images/destinations/291/taunovo_bay_resort_spa_perch.jpg",
+    wifi: true
   },
   listing18: {
     title: "Cove in Curacao",
@@ -369,6 +387,7 @@ LISTINGS = [
     room_type: "Entire place",
     num_guests: 30,
     img_url: "https://travel.usnews.com/static-travel/images/destinations/247/gettyimages-471964913.jpg",
+    wifi: true
   },
   listing19: {
     title: "Come relax in the US Virgin Islands",
@@ -385,6 +404,7 @@ LISTINGS = [
     room_type: "Entire place",
     num_guests: 10,
     img_url: "https://travel.usnews.com/static-travel/images/destinations/84/st_thomas_cruise_harbor.jpg",
+    wifi: true
   },
   listing21: {
     title: "Puerto Rico Por Favor",
@@ -401,6 +421,7 @@ LISTINGS = [
     room_type: "Single listing",
     num_guests: 2,
     img_url: "https://travel.usnews.com/static-travel/images/destinations/35/skyline_-_sean_pavone_-_shutterstock.jpg",
+    wifi: true
   },
   listing22: {
     title: "Go to Trinidad & Tobago",
@@ -417,6 +438,7 @@ LISTINGS = [
     room_type: "Single listing",
     num_guests: 4,
     img_url: "https://travel.usnews.com/static-travel/images/destinations/55/fort_george_trinidad.jpg",
+    wifi: true
   },
   listing23: {
     title: "Martinique Magic",
@@ -433,6 +455,7 @@ LISTINGS = [
     room_type: "Entire place",
     num_guests: 6,
     img_url: "https://travel.usnews.com/static-travel/images/destinations/63/pier.jpg",
+    wifi: true
   },
   listing24: {
     title: "Havana Heaven",
@@ -449,6 +472,7 @@ LISTINGS = [
     room_type: "Entire place",
     num_guests: 6,
     img_url: "https://travel.usnews.com/static-travel/images/destinations/403/517197127.jpg",
+    wifi: true
   },
   listing26: {
     title: "Sunny Grenada",
@@ -465,6 +489,7 @@ LISTINGS = [
     room_type: "Entire place",
     num_guests: 16,
     img_url: "https://travel.usnews.com/static-travel/images/destinations/234/view_of_the_carenage.jpg",
+    wifi: true
   },
   listing27: {
     title: "Come to Cayman",
@@ -481,6 +506,7 @@ LISTINGS = [
     room_type: "Entire place",
     num_guests: 9,
     img_url: "https://travel.usnews.com/static-travel/images/destinations/76/seven_mile_beach.jpg",
+    wifi: true
   },
   listing28: {
     title: "Amazing Antigua",
@@ -497,6 +523,7 @@ LISTINGS = [
     room_type: "Entire place",
     num_guests: 25,
     img_url: "https://travel.usnews.com/static-travel/images/destinations/69/antigua_main.jpg",
+    wifi: true
   },
   listing29: {
     title: "Palm Trees for Days in St. Kitts & Nevis",
@@ -513,6 +540,7 @@ LISTINGS = [
     room_type: "Entire place",
     num_guests: 8,
     img_url: "https://travel.usnews.com/static-travel/images/destinations/79/palm_trees_st_kitts_getty_medioimages.jpg",
+    wifi: true
   },
   listing30: {
     title: "Get Remote in Kerguelen Islands",
@@ -529,6 +557,7 @@ LISTINGS = [
     room_type: "Entire place",
     num_guests: 8,
     img_url: "https://media1.britannica.com/eb-media/22/123422-004-BBA7700A.jpg",
+    wifi: true
   },
   listing31: {
     title: "Spitsbergen Spit-say-yes!",
@@ -545,6 +574,7 @@ LISTINGS = [
     room_type: "Entire place",
     num_guests: 8,
     img_url: "https://media1.britannica.com/eb-media/57/150657-004-DA93B8A4.jpg",
+    wifi: true
   },
   listing32: {
     title: "Easter Island Place!",
@@ -561,6 +591,7 @@ LISTINGS = [
     room_type: "Entire place",
     num_guests: 10,
     img_url: "https://img.buzzfeed.com/buzzfeed-static/static/2015-02/16/9/enhanced/webdr06/original-21737-1424098060-21.jpg",
+    wifi: true
   },
   listing33: {
     title: "Party on Pitcairn Island",
@@ -577,6 +608,7 @@ LISTINGS = [
     room_type: "Entire place",
     num_guests: 30,
     img_url: "https://img.buzzfeed.com/buzzfeed-static/static/2015-02/16/10/enhanced/webdr09/original-20673-1424098851-17.jpg",
+    wifi: true
   },
   listing34: {
     title: "Bear Island / Bjørnøya in Norway!",
@@ -593,6 +625,7 @@ LISTINGS = [
     room_type: "Entire place",
     num_guests: 10,
     img_url: "https://img.buzzfeed.com/buzzfeed-static/static/2015-02/16/7/enhanced/webdr02/original-10768-1424089293-4.jpg",
+    wifi: true
   },
   listing35: {
     title: "St Kilda, a true archipelago!",
@@ -609,6 +642,7 @@ LISTINGS = [
     room_type: "Entire place",
     num_guests: 10,
     img_url: "https://img.buzzfeed.com/buzzfeed-static/static/2015-02/16/7/enhanced/webdr06/original-19868-1424089964-3.jpg",
+    wifi: true
   },
   listing36: {
     title: "Tristan da Cunha, A Remote Getaway",
@@ -624,7 +658,8 @@ LISTINGS = [
     prop_type: "House",
     room_type: "Entire place",
     num_guests: 10,
-    img_url: "https://img.buzzfeed.com/buzzfeed-static/static/2015-02/16/8/enhanced/webdr09/original-20694-1424094180-4.jpg"
+    img_url: "https://img.buzzfeed.com/buzzfeed-static/static/2015-02/16/8/enhanced/webdr09/original-20694-1424094180-4.jpg",
+    wifi: true
   },
   listing37: {
     title: "Inaccessible Island, But Not For You!",
@@ -640,7 +675,8 @@ LISTINGS = [
     prop_type: "House",
     room_type: "Entire place",
     num_guests: 12,
-    img_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/View_of_Nightingale_and_Inaccessible_islands_from_the_deck_of_National_Geographic_Explorer.jpg/2000px-View_of_Nightingale_and_Inaccessible_islands_from_the_deck_of_National_Geographic_Explorer.jpg"
+    img_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/View_of_Nightingale_and_Inaccessible_islands_from_the_deck_of_National_Geographic_Explorer.jpg/2000px-View_of_Nightingale_and_Inaccessible_islands_from_the_deck_of_National_Geographic_Explorer.jpg",
+    wifi: true
   },
   listing38: {
     title: "Raoul Island, New Zealand!",
@@ -656,7 +692,8 @@ LISTINGS = [
     prop_type: "House",
     room_type: "Entire place",
     num_guests: 8,
-    img_url: "https://img.buzzfeed.com/buzzfeed-static/static/2015-02/16/10/enhanced/webdr04/original-3024-1424100579-3.jpg"
+    img_url: "https://img.buzzfeed.com/buzzfeed-static/static/2015-02/16/10/enhanced/webdr04/original-3024-1424100579-3.jpg",
+    wifi: true
   },
   listing39: {
     title: "Takuu, Papua New Guinea!",
@@ -672,7 +709,8 @@ LISTINGS = [
     prop_type: "House",
     room_type: "Entire place",
     num_guests: 6,
-    img_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/NukutoaHighTide.JPG/700px-NukutoaHighTide.JPG"
+    img_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/NukutoaHighTide.JPG/700px-NukutoaHighTide.JPG",
+    wifi: true
   },
 ]
 
@@ -702,28 +740,28 @@ LISTINGS.each do |list|
   end
   
   
-20.times do 
-  Review.create!(
-    user_id: Random.rand(43..52),
-    listing_id: Random.rand(77..84),
-    rating: Random.rand(1..5),
-    body: REVIEWS.sample
-    )
-end
+# 30.times do 
+#   Review.create(
+#     user_id: User.find(User.pluck(:id).shuffle.first),
+#     listing_id: Listing.find(Listing.pluck(:id).shuffle.first),
+#     rating: Random.rand(1..5),
+#     body: REVIEWS.sample
+#     )
+# end
   
 
 
-# sample_listings.each do |listing|
-#   rand_review_amt = Random.rand(1..20)
-#   rand_review_amt.times do
-#     Review.create!(
-#       listing_id: listing.id,
-#       user_id: Random.rand(1..20),
-#       body: REVIEWS.sample,
-#       rating: Random.rand(1..5)
-#       )
-#   end
-# end
+sample_listings.each do |listing|
+  rand_review_amt = Random.rand(1..20)
+  rand_review_amt.times do
+    Review.create!(
+      listing_id: Listing.pluck(:id).shuffle.first,
+      user_id: User.pluck(:id).shuffle.first,
+      body: REVIEWS.sample,
+      rating: Random.rand(1..5)
+      )
+  end
+end
   
 end
 

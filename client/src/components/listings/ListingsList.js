@@ -1,7 +1,7 @@
 import React from 'react'
 // import { Route, Switch } from 'react-router-dom'
 import ListingsListItem from './ListingsListItem'
-// import Map from '../gmap/Map'
+
 
 
 class ListingsList extends React.Component {
