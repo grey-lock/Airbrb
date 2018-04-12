@@ -368,10 +368,11 @@ h4 {
 /*}*/
 
 .map-search-container {
-  display: flex;
-  position: absolute;
+  /*display: flex;*/
+  position: relative;
   /*top: 200px;*/
-  right: 0;
+  padding-top: 15px;
+  right: 0px;
   float: right;
 
 }
