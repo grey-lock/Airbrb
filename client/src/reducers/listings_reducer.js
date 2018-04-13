@@ -23,9 +23,10 @@ const listingsReducer = (state = initialState, action) => {
       // Use the initial state and copy over the new item
       return [...initialState.listings, action.listing]
     case 'UPDATE_LISTING':
-      return Object.assign({}, state, {
-        likes: action.listings
-      })
+      console.log('UPDATE_LISTING REDUCER: ',state, action.listing)
+      const listing = action.listing
+      const index = state.listings.findIndex(l => l.id === listing.id);
+      return {...state, listings: [...state.listings.slice(0, index), listing, ...state.listings.slice(index + 1)]}
     default:
       return state
   }
