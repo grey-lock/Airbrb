@@ -1,5 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { likeListing } from '../../actions/listing_actions'
+import { connect } from 'react-redux'
+import{ bindActionCreators } from 'redux'
 
 // import ListingPageContainer from './item/ListingPageContainer'
 
@@ -7,34 +10,37 @@ import { Link } from 'react-router-dom'
 class ListingsListItem extends React.Component {
   constructor(props) {
     super(props)
-    
-    
-    //this.handleLike = this.handleLike.bind(this)
+    const initialState = this.state
   }
   
-  handleLike = () => {
-    let count = this.state.count
-    this.setState({
-      count: count += 1
-    })
-  }
-  
-  callApi = () => {
+  handleLike = e => {
     const API_URL = process.env.REACT_APP_API_URL
-    
+    const listingId = e.target.dataset.id
+
     const headers = {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
-  }
+     'Accept': 'application/json',
+     'Content-Type': 'application/json'
+    }
+    
+    return fetch(`${API_URL}/listings/${listingId}`, {
+      method: 'PATCH',
+      headers,
+      
+    })
+      .then(resp => resp.json())
+      .then(listing => likeListing(listing),
+      console.error
+      )
+    
 
   }
-
-  // Styling for each img item
-
+  
   render() {
     const {listing} = this.props
     let img = listing.img_url
-  // debugger
+  
+  
+  // Styling for each img item
   const imgStyle = {
     height: '100%',
     width: '100%',
@@ -42,7 +48,7 @@ class ListingsListItem extends React.Component {
     zIndex: 10
   }
   
-
+  // debugger
   return (
   <li>
 
@@ -68,12 +74,31 @@ class ListingsListItem extends React.Component {
       </div>
     </div>
     </Link>
-    <button onClick={this.handleLike}>Like</button>
-    <button onClick={this.callApi}>Call Api</button>
+    <button onClick={this.handleLike}
+            data-id={listing.id}>Like</button>
+    {/*<button onClick={this.callApi}>Call Api</button>*/}
     <span>Likes: {listing.likes}</span>
 
   </li>
   )
 }
 }
-export default ListingsListItem
+
+const mapStateToProps = state => {
+  // console.log(listings)
+  console.log('mapStateToProps', state)
+  // debugger
+  return ({
+    listings: state.listings
+  })
+}
+
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators({
+    // Whenever this property is executed, this method will fire
+    likeListing: likeListing
+  }, dispatch)
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(ListingsListItem)
