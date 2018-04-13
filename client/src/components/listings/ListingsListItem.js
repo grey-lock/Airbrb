@@ -3,9 +3,63 @@ import { Link } from 'react-router-dom'
 // import ListingPageContainer from './item/ListingPageContainer'
 
 
-const ListingsListItem = ({ listing }) => {
+class ListingsListItem extends React.Component {
+  constructor(props) {
+    super(props)
+    
+    this.state = {
+      count: 0
+    }
+    
+    //this.handleLike = this.handleLike.bind(this)
+  }
+  
+  handleLike = () => {
+    let count = this.state.count
+    this.setState({
+      count: count += 1
+    })
+  }
+  
+  callApi = () => {
+    const API_URL = process.env.REACT_APP_API_URL
+    
+    const headers = {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+  }
+  console.log("a")
+   fetch(`${API_URL}/listfdsfdfsings`, {
+      headers,
+    method: 'GET'
+    })
+    .then(resp => {
+      
+      if(resp.ok) {
+        console.log('b')
+        return resp.json()
+      } else {
+        throw new Error(resp.statusText)
+      }
+      
+      
+    })
+    .then(listings => console.log('c', listings))
+    .catch(err => console.log('d', err))
+    console.log('e')
+    
+    // a e b c + listings
+    
+    // a e d + err
+  }
+
   // Styling for each img item
-  let img = listing.img_url
+
+  // console.log(imgStyle)
+  // debugger
+  render() {
+    const {listing} = this.props
+    let img = listing.img_url
   // console.log(img)
   const imgStyle = {
     height: '100%',
@@ -13,8 +67,8 @@ const ListingsListItem = ({ listing }) => {
     backgroundImage: `url(${img})`,
     zIndex: 10
   }
-  // console.log(imgStyle)
-  // debugger
+  
+
   return (
   <li>
 
@@ -40,8 +94,11 @@ const ListingsListItem = ({ listing }) => {
       </div>
     </div>
     </Link>
+    <button onClick={this.handleLike}>Like</button>
+    <button onClick={this.callApi}>Call Api</button>
+    <div>{this.state.count}</div>
   </li>
   )
 }
-
+}
 export default ListingsListItem
