@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { fetchListings, fetchListing, updateListing } from '../../actions/listing_actions'
+import { fetchListing, updateListing } from '../../actions/listing_actions'
 import { connect } from 'react-redux'
 
 
@@ -10,9 +10,7 @@ class ListingsListItem extends React.Component {
     const API_URL = process.env.REACT_APP_API_URL
     const listingId = e.target.dataset.id
     
-    return fetch(`${API_URL}/listings/${listingId}`)
-      .then(resp => resp.json())
-      .then(listing => this.props.updateListing(listing))
+    this.props.updateListing(this.props.listing)
 
   }
   
