@@ -6,11 +6,6 @@ import { connect } from 'react-redux'
 
 class ListingsListItem extends React.Component {
   
-  // componentWillReceiveProps(nextProps) {
-  //   this.setState({listings: nextProps.listings});
-  // }
-  
-
   handleLike = e => {
     const API_URL = process.env.REACT_APP_API_URL
     const listingId = e.target.dataset.id
