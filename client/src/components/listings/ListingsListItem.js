@@ -7,9 +7,6 @@ class ListingsListItem extends React.Component {
   constructor(props) {
     super(props)
     
-    this.state = {
-      count: 0
-    }
     
     //this.handleLike = this.handleLike.bind(this)
   }
@@ -28,39 +25,15 @@ class ListingsListItem extends React.Component {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
   }
-  console.log("a")
-   fetch(`${API_URL}/listfdsfdfsings`, {
-      headers,
-    method: 'GET'
-    })
-    .then(resp => {
-      
-      if(resp.ok) {
-        console.log('b')
-        return resp.json()
-      } else {
-        throw new Error(resp.statusText)
-      }
-      
-      
-    })
-    .then(listings => console.log('c', listings))
-    .catch(err => console.log('d', err))
-    console.log('e')
-    
-    // a e b c + listings
-    
-    // a e d + err
+
   }
 
   // Styling for each img item
 
-  // console.log(imgStyle)
-  // debugger
   render() {
     const {listing} = this.props
     let img = listing.img_url
-  // console.log(img)
+  // debugger
   const imgStyle = {
     height: '100%',
     width: '100%',
@@ -96,7 +69,8 @@ class ListingsListItem extends React.Component {
     </Link>
     <button onClick={this.handleLike}>Like</button>
     <button onClick={this.callApi}>Call Api</button>
-    <div>{this.state.count}</div>
+    <span>Likes: {listing.likes}</span>
+
   </li>
   )
 }

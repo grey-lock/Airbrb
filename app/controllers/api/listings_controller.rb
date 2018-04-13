@@ -67,7 +67,8 @@ class Api::ListingsController < ApplicationController
       :wifi,
       :kitchen,
       :ac,
-      :tv
+      :tv,
+      :likes
       )
   end
   
