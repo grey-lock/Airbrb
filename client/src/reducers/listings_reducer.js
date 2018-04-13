@@ -22,6 +22,10 @@ const listingsReducer = (state = initialState, action) => {
     case 'ADD_LISTING':
       // Use the initial state and copy over the new item
       return [...initialState.listings, action.listing]
+    case 'LIKE_LISTING':
+        const listing = action.payload
+        const index = state.listings.findIndex(list => list.id === listing.id)
+        return {...state, listings: [...state.listings.slice(0, index), listing, ...state.listings.slice(index + 1)]}
     default:
       return state
   }
