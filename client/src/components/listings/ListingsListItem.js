@@ -5,29 +5,19 @@ import { connect } from 'react-redux'
 
 
 class ListingsListItem extends React.Component {
-  constructor(props) {
-    super(props)
-    // this.state = {
-    //   likes: this.props.likes
-    // }
-
-  }
   
-  componentWillReceiveProps(nextProps) {
-    this.setState({listings: nextProps.listings});
-  }
+  // componentWillReceiveProps(nextProps) {
+  //   this.setState({listings: nextProps.listings});
+  // }
   
 
   handleLike = e => {
     const API_URL = process.env.REACT_APP_API_URL
     const listingId = e.target.dataset.id
-    // const listing = props.fetchListing(listingId)
-      return fetch(`${API_URL}/listings/${listingId}`)
+    
+    return fetch(`${API_URL}/listings/${listingId}`)
       .then(resp => resp.json())
       .then(listing => this.props.updateListing(listing))
-      // fetch(`${API_URL}/listings/${listingId}`)
-      //   .then(resp => resp.json())
-      //   .then(listing => this.props.fetchListing(listing))
 
   }
   
