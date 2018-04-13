@@ -24,7 +24,7 @@ const listingsReducer = (state = initialState, action) => {
       return [...initialState.listings, action.listing]
     case 'UPDATE_LISTING':
       return Object.assign({}, state, {
-        likes: action.payload
+        likes: action.listings
       })
     default:
       return state

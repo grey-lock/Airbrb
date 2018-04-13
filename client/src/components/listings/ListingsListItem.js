@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { fetchListing, updateListing } from '../../actions/listing_actions'
+import { fetchListings, fetchListing, updateListing } from '../../actions/listing_actions'
 import { connect } from 'react-redux'
-// import{ bindActionCreators } from 'redux'
+// import{ bindActionCreators } from 'redux'gqgd
 
 // import ListingPageContainer from './item/ListingPageContainer'
 
@@ -15,25 +15,30 @@ class ListingsListItem extends React.Component {
     }
 
   }
+  
+  componentWillReceiveProps(nextProps) {
+    this.setState({listings: nextProps.listings});
+  }
+  
 
   handleLike = e => {
     const API_URL = process.env.REACT_APP_API_URL
     const listingId = e.target.dataset.id
     // const listing = props.fetchListing(listingId)
-    return fetch(`${API_URL}/listings/${listingId}`)
+      return fetch(`${API_URL}/listings/${listingId}`)
       .then(resp => resp.json())
       .then(listing => this.props.updateListing(listing))
-     fetch(`${API_URL}/listings/${listingId}`)
-        .then(resp => resp.json())
-        .then(listing => this.props.fetchListing(listing))
+      // fetch(`${API_URL}/listings/${listingId}`)
+      //   .then(resp => resp.json())
+      //   .then(listing => this.props.fetchListing(listing))
 
       
       // this.props.fetchListing(listing)
 
-    const headers = {
-     'Accept': 'application/json',
-     'Content-Type': 'application/json'
-    }
+    // const headers = {
+    // 'Accept': 'application/json',
+    // 'Content-Type': 'application/json'
+    // }
     
     // this.props.updateListing(listing)
   }
@@ -93,5 +98,13 @@ const mapStateToProps = state => {
   })
 };
 
+// const mapDispatchToProps = dispatch => {
+//   console.log('mapDispatchToProps', dispatch)
+//   return bindActionCreators({
+//     // Whenever this property is executed, this method will fire
+//     fetchListing: fetchListing,
+//     updateListing: updateListing
+//   }, dispatch)
+// }
 
-export default connect(mapStateToProps, {updateListing})(ListingsListItem)
+export default connect(mapStateToProps, {updateListing, fetchListing})(ListingsListItem)
