@@ -10,9 +10,9 @@ import { connect } from 'react-redux'
 class ListingsListItem extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      likes: this.props.likes
-    }
+    // this.state = {
+    //   likes: this.props.likes
+    // }
 
   }
   
@@ -94,7 +94,7 @@ class ListingsListItem extends React.Component {
 
 const mapStateToProps = state => {
   return ({
-    listings: state.listings
+    likes: state.listings.likes
   })
 };
 
