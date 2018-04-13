@@ -25,6 +25,10 @@ const addListing = listing => {
   return { type: 'ADD_LISTING', listing }
 }
 
+const like = listing => {
+  return { type: 'LIKE_LISTING', listing }
+}
+
 
 // Async Actions
 
@@ -58,3 +62,15 @@ export const createListing = listing => dispatch => { // return the dispatch
     )
 }
 
+export const likeListing = listing => dispatch => {
+  console.log('Liking a listing')
+  return fetch(`${API_URL}/listings/${listing.id}`, {
+    method: 'PATCH',
+    headers,
+    body: JSON.stringify({listing})
+  })
+  .then(resp => resp.json())
+  .then(listing => dispatch(like(listing)),
+  console.error
+  )
+}
