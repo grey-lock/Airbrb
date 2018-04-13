@@ -25,8 +25,8 @@ const addListing = listing => {
   return { type: 'ADD_LISTING', listing }
 }
 
-const like = listing => {
-  return { type: 'LIKE_LISTING', listing }
+const update = listing => {
+  return { type: 'UPDATE_LISTING', listing }
 }
 
 
@@ -62,15 +62,16 @@ export const createListing = listing => dispatch => { // return the dispatch
     )
 }
 
-export const likeListing = listing => dispatch => {
-  console.log('Liking a listing')
+export const updateListing = listing => dispatch => {
+  console.log('Liking a listing', listing)
   return fetch(`${API_URL}/listings/${listing.id}`, {
     method: 'PATCH',
     headers,
-    body: JSON.stringify({listing})
+    body: JSON.stringify({
+      likes: listing.likes += 1
+    })
   })
-  .then(resp => resp.json())
-  .then(listing => dispatch(like(listing)),
-  console.error
-  )
+    .then(resp => resp.json())
+    .then(resp => dispatch(update(listing))
+    )
 }

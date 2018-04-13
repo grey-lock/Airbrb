@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { likeListing } from '../../actions/listing_actions'
+import { fetchListing, updateListing } from '../../actions/listing_actions'
 import { connect } from 'react-redux'
-import{ bindActionCreators } from 'redux'
+// import{ bindActionCreators } from 'redux'
 
 // import ListingPageContainer from './item/ListingPageContainer'
 
@@ -10,29 +10,32 @@ import{ bindActionCreators } from 'redux'
 class ListingsListItem extends React.Component {
   constructor(props) {
     super(props)
-    const initialState = this.state
+    this.state = {
+      likes: this.props.likes
+    }
+
   }
-  
+
   handleLike = e => {
     const API_URL = process.env.REACT_APP_API_URL
     const listingId = e.target.dataset.id
+    // const listing = props.fetchListing(listingId)
+    return fetch(`${API_URL}/listings/${listingId}`)
+      .then(resp => resp.json())
+      .then(listing => this.props.updateListing(listing))
+     fetch(`${API_URL}/listings/${listingId}`)
+        .then(resp => resp.json())
+        .then(listing => this.props.fetchListing(listing))
+
+      
+      // this.props.fetchListing(listing)
 
     const headers = {
      'Accept': 'application/json',
      'Content-Type': 'application/json'
     }
     
-    return fetch(`${API_URL}/listings/${listingId}`, {
-      method: 'PATCH',
-      headers,
-      
-    })
-      .then(resp => resp.json())
-      .then(listing => likeListing(listing),
-      console.error
-      )
-    
-
+    // this.props.updateListing(listing)
   }
   
   render() {
@@ -85,20 +88,10 @@ class ListingsListItem extends React.Component {
 }
 
 const mapStateToProps = state => {
-  // console.log(listings)
-  console.log('mapStateToProps', state)
-  // debugger
   return ({
     listings: state.listings
   })
-}
-
-const mapDispatchToProps = dispatch => {
-  return bindActionCreators({
-    // Whenever this property is executed, this method will fire
-    likeListing: likeListing
-  }, dispatch)
-}
+};
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(ListingsListItem)
+export default connect(mapStateToProps, {updateListing})(ListingsListItem)

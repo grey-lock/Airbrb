@@ -22,13 +22,10 @@ const listingsReducer = (state = initialState, action) => {
     case 'ADD_LISTING':
       // Use the initial state and copy over the new item
       return [...initialState.listings, action.listing]
-    case 'LIKE_LISTING':
-      console.log('LIKE_LISTING')
-        return state.listings.map(list => {
-            if (list.id === action.payload) {
-              return Object.assign({}, list, {likes: list.likes +=1 })
-            }
-        })
+    case 'UPDATE_LISTING':
+      return Object.assign({}, state, {
+        likes: action.payload
+      })
     default:
       return state
   }
