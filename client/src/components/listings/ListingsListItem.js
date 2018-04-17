@@ -6,12 +6,13 @@ import { connect } from 'react-redux'
 
 class ListingsListItem extends React.Component {
   
-  handleLike = e => {
+ handleLike = e => {
     const API_URL = process.env.REACT_APP_API_URL
     const listingId = e.target.dataset.id
     
-    this.props.updateListing(this.props.listing)
-
+    return fetch(`${API_URL}/listings/${listingId}`)
+      .then(resp => resp.json())
+      .then(listing => this.props.updateListing(listing))
   }
   
   render() {
