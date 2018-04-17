@@ -1,6 +1,6 @@
 import fetch from 'isomorphic-fetch'
 
-const API_URL = 'https://localhost:3000/api'
+const API_URL = process.env.REACT_APP_API_URL
 
 
 // Assign this to clean up fetch code
@@ -25,6 +25,10 @@ const addListing = listing => {
   return { type: 'ADD_LISTING', listing }
 }
 
+const update = listing => {
+  return { type: 'UPDATE_LISTING', listing }
+}
+
 
 // Async Actions
 
@@ -38,7 +42,7 @@ export const fetchListings = () => dispatch => { // return the dispatch
 }
 
 export const fetchListing = listing => dispatch => {
-  return fetch(`/api/listings/${listing}`)
+  return fetch(`${API_URL}/listings/${listing}`)
   .then(resp => resp.json())
   .then(listing => dispatch(getListing(listing)),
   console.error
@@ -58,3 +62,16 @@ export const createListing = listing => dispatch => { // return the dispatch
     )
 }
 
+export const updateListing = listing => dispatch => {
+  console.log('Liking a listing', listing)
+  return fetch(`/api/listings/${listing.id}`, {
+    method: 'PATCH',
+    headers,
+    body: JSON.stringify({
+      likes: listing.likes += 1
+    })
+  })
+    .then(resp => resp.json())
+    .then(resp => dispatch(update(listing))
+    )
+}

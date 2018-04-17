@@ -14,11 +14,12 @@ class ListingsListItem extends React.Component {
   //   //this.handleLike = this.handleLike.bind(this)
   // }
   
-  handleLike = () => {
-    let count = this.state.count
-    this.setState({
-      count: count += 1
-    })
+  handleLike = e => {
+    const API_URL = process.env.REACT_APP_API_URL
+    const listingId = e.target.dataset.id
+    
+    this.props.updateListing(this.props.listing)
+
   }
   
   // callApi = () => {
