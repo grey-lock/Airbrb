@@ -74,7 +74,7 @@ class Map extends React.Component {
     this.setState({listings: []})
     const API_URL = process.env.REACT_APP_API_URL
 
-    fetch(`${API_URL}/listings?min_lng=${this.xMapBounds.min}&max_lng=${this.xMapBounds.max}&min_lat=${this.yMapBounds.min}`,
+    fetch(`/listings?min_lng=${this.xMapBounds.min}&max_lng=${this.xMapBounds.max}&min_lat=${this.yMapBounds.min}`,
       { method: 'GET' })
       .then(resp => resp.json())
       .then(resp => this.setState({listings: resp}))
