@@ -30,7 +30,7 @@ const addListing = listing => {
 
 export const fetchListings = () => dispatch => { // return the dispatch
   console.log('firing fetchListings in listingActions action')
-  return fetch(`${API_URL}/listings`) // Fetch the listings from the API
+  return fetch(`/api/listings`) // Fetch the listings from the API
     .then(resp => resp.json()) // Parse the resp
     .then(listings => dispatch(getListings(listings)), // Pass the parsed response to the dispatch
     console.error
@@ -38,7 +38,7 @@ export const fetchListings = () => dispatch => { // return the dispatch
 }
 
 export const fetchListing = listing => dispatch => {
-  return fetch(`${API_URL}/listings/${listing}`)
+  return fetch(`/api/listings/${listing}`)
   .then(resp => resp.json())
   .then(listing => dispatch(getListing(listing)),
   console.error
@@ -47,7 +47,7 @@ export const fetchListing = listing => dispatch => {
 
 export const createListing = listing => dispatch => { // return the dispatch
   console.log('CREATING Listing by POST')
-  return fetch(`${API_URL}/listings`, { // POST to the server
+  return fetch(`/api/listings`, { // POST to the server
     body: JSON.stringify({ listing }), // JSON the listing data
     method: 'POST',
     headers
