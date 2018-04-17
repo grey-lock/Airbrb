@@ -14,12 +14,12 @@ class ListingsListItem extends React.Component {
   //   //this.handleLike = this.handleLike.bind(this)
   // }
   
-  // handleLike = () => {
-  //   let count = this.state.count
-  //   this.setState({
-  //     count: count += 1
-  //   })
-  // }
+  handleLike = () => {
+    let count = this.state.count
+    this.setState({
+      count: count += 1
+    })
+  }
   
   // callApi = () => {
   //   const API_URL = process.env.REACT_APP_API_URL
@@ -95,9 +95,9 @@ class ListingsListItem extends React.Component {
       </div>
     </div>
     </Link>
-    {/*<button onClick={this.handleLike}>Like</button>
-    <button onClick={this.callApi}>Call Api</button>
-    <div>{this.state.count}</div>*/}
+    <button onClick={this.handleLike}>Like</button>
+    {/*<button onClick={this.callApi}>Call Api</button>*/}
+    <div>{this.state.count}</div>
   </li>
   )
 }
