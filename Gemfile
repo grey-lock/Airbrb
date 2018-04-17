@@ -29,6 +29,7 @@ gem 'dotenv-rails'
 # For user authentication
 gem 'active_model_serializers'
 gem 'faker'
+gem 'foreman'
 
 
 
