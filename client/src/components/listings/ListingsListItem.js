@@ -4,59 +4,60 @@ import { Link } from 'react-router-dom'
 
 
 class ListingsListItem extends React.Component {
-  constructor(props) {
-    super(props)
+  // constructor(props) {
+  //   super(props)
     
-    this.state = {
-      count: 0
-    }
+  //   this.state = {
+  //     count: 0
+  //   }
     
-    //this.handleLike = this.handleLike.bind(this)
-  }
+  //   //this.handleLike = this.handleLike.bind(this)
+  // }
   
-  handleLike = () => {
-    let count = this.state.count
-    this.setState({
-      count: count += 1
-    })
-  }
+  // handleLike = () => {
+  //   let count = this.state.count
+  //   this.setState({
+  //     count: count += 1
+  //   })
+  // }
   
-  callApi = () => {
-    const API_URL = process.env.REACT_APP_API_URL
+  // callApi = () => {
+  //   const API_URL = process.env.REACT_APP_API_URL
     
-    const headers = {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
-  }
-  console.log("a")
-   fetch(`${API_URL}/listfdsfdfsings`, {
-      headers,
-    method: 'GET'
-    })
-    .then(resp => {
+  //   const headers = {
+  //     'Accept': 'application/json',
+  //     'Content-Type': 'application/json'
+  // }
+  // console.log("a")
+  // fetch(`${API_URL}/listfdsfdfsings`, {
+  //     headers,
+  //   method: 'GET'
+  //   })
+  //   .then(resp => {
       
-      if(resp.ok) {
-        console.log('b')
-        return resp.json()
-      } else {
-        throw new Error(resp.statusText)
-      }
+  //     if(resp.ok) {
+  //       console.log('b')
+  //       return resp.json()
+  //     } else {
+  //       throw new Error(resp.statusText)
+  //     }
       
       
-    })
-    .then(listings => console.log('c', listings))
-    .catch(err => console.log('d', err))
-    console.log('e')
+  //   })
+  //   .then(listings => console.log('c', listings))
+  //   .catch(err => console.log('d', err))
+  //   console.log('e')
     
-    // a e b c + listings
+  //   // a e b c + listings
     
-    // a e d + err
-  }
+  //   // a e d + err
+  // }
 
   // Styling for each img item
 
   // console.log(imgStyle)
   // debugger
+  
   render() {
     const {listing} = this.props
     let img = listing.img_url
@@ -94,9 +95,9 @@ class ListingsListItem extends React.Component {
       </div>
     </div>
     </Link>
-    <button onClick={this.handleLike}>Like</button>
+    {/*<button onClick={this.handleLike}>Like</button>
     <button onClick={this.callApi}>Call Api</button>
-    <div>{this.state.count}</div>
+    <div>{this.state.count}</div>*/}
   </li>
   )
 }
