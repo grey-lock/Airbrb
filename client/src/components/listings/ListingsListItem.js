@@ -21,37 +21,37 @@ class ListingsListItem extends React.Component {
     })
   }
   
-  callApi = () => {
-    const API_URL = process.env.REACT_APP_API_URL
+  // callApi = () => {
+  //   const API_URL = process.env.REACT_APP_API_URL
     
-    const headers = {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
-  }
-  console.log("a")
-   fetch(`${API_URL}/listfdsfdfsings`, {
-      headers,
-    method: 'GET'
-    })
-    .then(resp => {
+  //   const headers = {
+  //     'Accept': 'application/json',
+  //     'Content-Type': 'application/json'
+  // }
+  // console.log("a")
+  // fetch(`${API_URL}/listfdsfdfsings`, {
+  //     headers,
+  //   method: 'GET'
+  //   })
+  //   .then(resp => {
       
-      if(resp.ok) {
-        console.log('b')
-        return resp.json()
-      } else {
-        throw new Error(resp.statusText)
-      }
+  //     if(resp.ok) {
+  //       console.log('b')
+  //       return resp.json()
+  //     } else {
+  //       throw new Error(resp.statusText)
+  //     }
       
       
-    })
-    .then(listings => console.log('c', listings))
-    .catch(err => console.log('d', err))
-    console.log('e')
+  //   })
+  //   .then(listings => console.log('c', listings))
+  //   .catch(err => console.log('d', err))
+  //   console.log('e')
     
     // a e b c + listings
     
     // a e d + err
-  }
+  // }
 
   // Styling for each img item
 
@@ -95,7 +95,7 @@ class ListingsListItem extends React.Component {
     </div>
     </Link>
     <button onClick={this.handleLike}>Like</button>
-    <button onClick={this.callApi}>Call Api</button>
+    {/*<button onClick={this.callApi}>Call Api</button>*/}
     <div>{this.state.count}</div>
   </li>
   )
