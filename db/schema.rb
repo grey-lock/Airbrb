@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 20180417171144) do
     t.boolean "tv", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "likes"
+    t.integer "likes", default: 0
     t.index ["host_id"], name: "index_listings_on_host_id"
   end
 
