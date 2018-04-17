@@ -1,18 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-// import ListingPageContainer from './item/ListingPageContainer'
+import { fetchListing, updateListing } from '../../actions/listing_actions'
+import { connect } from 'react-redux'
 
 
 class ListingsListItem extends React.Component {
-  // constructor(props) {
-  //   super(props)
-    
-  //   this.state = {
-  //     count: 0
-  //   }
-    
-  //   //this.handleLike = this.handleLike.bind(this)
-  // }
   
   handleLike = e => {
     const API_URL = process.env.REACT_APP_API_URL
@@ -22,47 +14,12 @@ class ListingsListItem extends React.Component {
 
   }
   
-  // callApi = () => {
-  //   const API_URL = process.env.REACT_APP_API_URL
-    
-  //   const headers = {
-  //     'Accept': 'application/json',
-  //     'Content-Type': 'application/json'
-  // }
-  // console.log("a")
-  // fetch(`${API_URL}/listfdsfdfsings`, {
-  //     headers,
-  //   method: 'GET'
-  //   })
-  //   .then(resp => {
-      
-  //     if(resp.ok) {
-  //       console.log('b')
-  //       return resp.json()
-  //     } else {
-  //       throw new Error(resp.statusText)
-  //     }
-      
-      
-  //   })
-  //   .then(listings => console.log('c', listings))
-  //   .catch(err => console.log('d', err))
-  //   console.log('e')
-    
-  //   // a e b c + listings
-    
-  //   // a e d + err
-  // }
-
-  // Styling for each img item
-
-  // console.log(imgStyle)
-  // debugger
-  
   render() {
     const {listing} = this.props
     let img = listing.img_url
-  // console.log(img)
+  
+  
+  // Styling for each img item
   const imgStyle = {
     height: '100%',
     width: '100%',
@@ -70,7 +27,7 @@ class ListingsListItem extends React.Component {
     zIndex: 10
   }
   
-
+  // debugger
   return (
   <li>
 
@@ -96,11 +53,22 @@ class ListingsListItem extends React.Component {
       </div>
     </div>
     </Link>
-    <button onClick={this.handleLike}>Like</button>
+    <button onClick={this.handleLike}
+            data-id={listing.id}>Like</button>
     {/*<button onClick={this.callApi}>Call Api</button>*/}
-    <div>{this.state.count}</div>
+    <span>Likes: {listing.likes}</span>
+
   </li>
   )
 }
 }
-export default ListingsListItem
+
+const mapStateToProps = state => {
+  return ({
+    likes: state.listings.likes
+  })
+};
+
+
+
+export default connect(mapStateToProps, {updateListing, fetchListing})(ListingsListItem)

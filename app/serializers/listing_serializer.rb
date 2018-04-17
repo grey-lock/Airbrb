@@ -18,5 +18,6 @@ class ListingSerializer < ActiveModel::Serializer
       :wifi,
       :kitchen,
       :ac,
-      :tv
+      :tv,
+      :likes
 end

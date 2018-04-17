@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :create, :show]
     get 'users/:user_id/bookings', to: 'bookings#index'
     
-    resources :listings, only: [:index, :create, :show]
+    resources :listings, only: [:index, :create, :show, :update]
     get 'listings/:listing_id/bookings', to: 'bookings#index'
     get 'listings/:listing_id/reviews', to: 'reviews#index'
     

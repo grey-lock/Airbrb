@@ -42,7 +42,7 @@ export const fetchListings = () => dispatch => { // return the dispatch
 }
 
 export const fetchListing = listing => dispatch => {
-  return fetch(`${API_URL}/listings/${listing}`)
+  return fetch(`/api/listings/${listing}`)
   .then(resp => resp.json())
   .then(listing => dispatch(getListing(listing)),
   console.error

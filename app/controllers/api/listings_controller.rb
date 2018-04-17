@@ -41,6 +41,15 @@ class Api::ListingsController < ApplicationController
     end
   end
   
+  def update
+    set_listing
+    if @listing.update(listing_params)
+      render json: @listing
+    else
+      render json: @listing.errors.full_messages, status: 422
+    end
+  end
+  
   private
 
   
@@ -67,7 +76,8 @@ class Api::ListingsController < ApplicationController
       :wifi,
       :kitchen,
       :ac,
-      :tv
+      :tv,
+      :likes
       )
   end
   
