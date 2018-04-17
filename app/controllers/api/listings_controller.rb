@@ -43,7 +43,7 @@ class Api::ListingsController < ApplicationController
   
   def update
     set_listing
-    if @listing.update(listing_params)
+    if @listing.update(listing_params) && @listing.errors.empty?
       render json: @listing
     else
       render json: @listing.errors.full_messages, status: 422
