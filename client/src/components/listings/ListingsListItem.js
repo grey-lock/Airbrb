@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { fetchListing, updateListing } from '../../actions/listing_actions'
 import { connect } from 'react-redux'
+import fetch from 'isomorphic-fetch'
 
 
 class ListingsListItem extends React.Component {
@@ -10,7 +11,7 @@ class ListingsListItem extends React.Component {
     const API_URL = process.env.REACT_APP_API_URL
     const listingId = e.target.dataset.id
     
-    return fetch(`/listings/${listingId}`)
+    return fetch(`/api/listings/${listingId}`)
       .then(resp => resp.json())
       .then(listing => this.props.updateListing(listing))
   }
