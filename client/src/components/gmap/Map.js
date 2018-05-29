@@ -72,7 +72,7 @@ class Map extends React.Component {
   
   fetchPlacesFromApi() {
     this.setState({listings: []})
-    const API_URL = process.env.REACT_APP_API_URL
+    const API_URL = 'http://localhost:3000/api' // This might have to change for heroku
 
     fetch(`${API_URL}/listings?min_lng=${this.xMapBounds.min}&max_lng=${this.xMapBounds.max}&min_lat=${this.yMapBounds.min}`,
       { method: 'GET' })
