@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import { fetchListings } from '../../actions/listing_actions.js'
+import { fetchListings } from '../../actions/listing_actions'
 
 const VALID_CHARS = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '/'];
 
@@ -78,8 +78,15 @@ class Search extends React.Component {
     )
   }
 
+}
 
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchListings: params => {
+      dispatch(fetchListings(params))
+    }
+  }
 }
 
 
-export default Search
+export default connect(mapDispatchToProps)(Search)
