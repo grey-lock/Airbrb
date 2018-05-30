@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import img from '../../assets/img/abnb-logo.png'
+import Search from '../search/Search';
+
 
 const NavBar = () => {
   return (
@@ -16,7 +18,12 @@ const NavBar = () => {
               <Link to='/' className='nav-link'><img src={img} alt='abnb-logo'/></Link>
             </li>
           </ul>
+
+          <Search />
+          
+          
           <ul className="navbar-nav mr-auto" id='nav-right'>
+          
             <li className="nav-item">
               <Link to='/listings' className='nav-link'>Homes</Link>
             </li>
