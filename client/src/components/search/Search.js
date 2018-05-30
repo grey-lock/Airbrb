@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux'
 
+const VALID_CHARS = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '/'];
 
-class Search extends React {
+class Search extends React.Component {
   constructor(props) {
     super(props)
     
@@ -13,8 +14,6 @@ class Search extends React {
       checkOut: '',
     }
   }
-
-  const VALID_CHARS = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '/'];
 
   handleDateChange(field) {
     return e => {
@@ -32,6 +31,17 @@ class Search extends React {
     })
   }
 
+  handleOnSubmit(e) {
+    e.preventDefault()
+  }
+
+  render() {
+    return(
+      <div id='search'>
+
+      </div>
+    )
+  }
 
 
 }
