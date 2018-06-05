@@ -21,7 +21,7 @@ class ListingsList extends React.Component {
     console.log('Loading ListingsList component')
     return (
       listings.length === 0 ? 
-      <div>No results.</div> 
+      <div>Loading listings...</div> 
       :
       <div className='listing-list'>
         <ul>
